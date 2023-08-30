@@ -1977,6 +1977,7 @@ textarea:focus,
 @media (max-width: 1199px) {
     .header .site-logo img {
         max-width: 150px;
+        margin: 5px;
     }
 }
 
