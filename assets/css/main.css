@@ -305,10 +305,15 @@ a:hover {
     }
 }
 
-.section-header p {
-    margin-top: 10px;
+.section-header li {
     font-size: 18px;
-    color: #f1f3ff;
+    list-style: disc;
+    margin-left: 1.3em;
+}
+
+.section-header.has--bg :is(h2, h3, p, li) {
+    margin-top: 10px;
+    margin-bottom: 1.3em;
 }
 
 .section-header.has--bg {
