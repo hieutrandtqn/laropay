@@ -2376,7 +2376,7 @@ span.is-active:after {
 /* header end */
 /* hero section css start */
 .hero {
-    padding-top: 245px;
+    padding-top: 158px;
     padding-bottom: 300px;
     position: relative;
     overflow: hidden;
@@ -2384,7 +2384,7 @@ span.is-active:after {
 
 @media (max-width: 1199px) {
     .hero {
-        padding-top: 200px;
+        padding-top: 100px;
         padding-bottom: 190px;
         overflow: hidden;
     }
@@ -2420,6 +2420,26 @@ span.is-active:after {
 
 .hero__content .cmn-btn {
     margin-top: 40px;
+}
+
+.hero__content .carousel {
+    position: relative;
+    height: 550px;
+}
+
+.hero__content .carousel-inner {
+    height: 100%;
+}
+
+.hero__content .carousel-item {
+    width: 90%;
+}
+
+.hero__content .carousel-control-prev {
+    transform: translateX(-80px);
+}
+.hero__content .carousel-control-next {
+    transform: translateX(80px);
 }
 
 .hero__sub-title {
@@ -3534,7 +3554,7 @@ span.is-active:after {
 .single-game-slider .slick-arrow {
     width: 40px;
     height: 40px;
-    background-color: #7a5deb;
+    background-image: #7a5deb;
     box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5);
     color: #ffffff;
     display: flex;
@@ -3955,6 +3975,7 @@ img.emoji {
     background: none !important;
     padding: 0 !important;
 }
+
 .about-thumb {
     position: relative;
 }
@@ -4102,8 +4123,8 @@ img.emoji {
 .testimonial-slider .slick-arrow {
     width: 40px;
     height: 40px;
-    background-color: #ffc310;
-    box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    box-shadow: 0px 5px 20px 0px rgba(255, 200, 39, 0.5);
     color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -4141,7 +4162,7 @@ img.emoji {
     background-image: -moz-linear-gradient(89deg, #350b2d 0%, #ff9c19 100%);
     background-image: -webkit-linear-gradient(89deg, #350b2d 0%, #ff9c19 100%);
     background-image: -ms-linear-gradient(89deg, #350b2d 0%, #ff9c19 100%);
-    box-shadow: 0px 12px 43px 0px rgba(48, 29, 117, 0.96);
+    box-shadow: 0px 12px 43px 0px rgba(255, 200, 39, 0.96);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -4225,8 +4246,8 @@ img.emoji {
     width: 150px;
     height: 150px;
     background: #800080;
-    background: -webkit-linear-gradient(to bottom, #c065dd, #5d28fe);
-    background: linear-gradient(to bottom, #c065dd, #5d28fe);
+    background: -webkit-linear-gradient(to bottom, #ff9c19, #ffdd2d);
+    background: linear-gradient(to bottom, #ff9c19, #ffdd2d);
     box-shadow: 0px 13px 4px 0px rgba(36, 25, 76, 0.01);
     border-radius: 50%;
     -webkit-border-radius: 50%;

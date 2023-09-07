@@ -10,6 +10,14 @@
         $(".preloader").css("display","none");
     });
 
+    //banner carousel
+    $("#carouselBannerIndicators").swiperight(function() {
+      $(this).carousel('prev');
+    });
+   $("#carouselBannerIndicators").swipeleft(function() {
+      $(this).carousel('next');
+   });
+
     // menu options custom affix
     var fixed_top = $(".header");
     $(window).on("scroll", function(){
