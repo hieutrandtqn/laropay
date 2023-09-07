@@ -412,7 +412,7 @@ a:hover {
 }
 
 .bold-bottom--border {
-    border-bottom: 20px solid #342171;
+    /* border-bottom: 20px solid #342171; */
 }
 
 .video-button {
@@ -2379,12 +2379,14 @@ span.is-active:after {
     padding-top: 245px;
     padding-bottom: 300px;
     position: relative;
+    overflow: hidden;
 }
 
 @media (max-width: 1199px) {
     .hero {
         padding-top: 200px;
         padding-bottom: 190px;
+        overflow: hidden;
     }
 }
 
@@ -3129,7 +3131,7 @@ span.is-active:after {
     }
 }
 
-.game-card__info .content p a {
+.game-card__info .content a {
     color: #b84745;
 }
 
@@ -4100,7 +4102,7 @@ img.emoji {
 .testimonial-slider .slick-arrow {
     width: 40px;
     height: 40px;
-    background-color: #7a5deb;
+    background-color: #ffc310;
     box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5);
     color: #ffffff;
     display: flex;
@@ -4243,6 +4245,10 @@ img.emoji {
         width: 110px;
         height: 110px;
     }
+}
+
+.testimonial-single__thumb img {
+    border-radius: 50%;
 }
 
 .testimonial-single__content {
@@ -5284,7 +5290,7 @@ img.emoji {
 
 .subscribe-area .subscribe-content .title {
     font-size: 36px;
-    color: #ffc310;
+    color: #fffa77;
 }
 
 @media (max-width: 767px) {
