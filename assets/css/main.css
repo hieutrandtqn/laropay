@@ -4938,7 +4938,7 @@ img.emoji {
 /* faq section css start */
 .faq-wrapper {
     padding: 120px 190px 0;
-    background-color: #000033;
+    /*background-color: #000033;*/
     box-shadow: 2.581px -36.91px 29px 0px rgba(0, 0, 51, 0.29);
     border-radius: 10px;
     -webkit-border-radius: 10px;
