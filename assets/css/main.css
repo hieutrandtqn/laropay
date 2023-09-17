@@ -344,6 +344,10 @@ a:hover {
     margin-bottom: 30px;
 }
 
+figure {
+    display: flex;
+}
+
 .section-sub-title {
     font-size: 24px;
     font-family: "Josefin Sans", sans-serif;
@@ -1333,7 +1337,7 @@ p,
 li,
 span {
     font-size: 16px;
-    color: #c4cbf9;
+    color: #ffffff;
     line-height: 1.5;
     margin: 0;
 }
@@ -1548,6 +1552,12 @@ textarea {
 label {
     color: #ffffff;
     margin-bottom: 13px;
+}
+
+figcaption {
+    color: #c4cbf9;
+    margin: 15px 0;
+    font-style: italic;
 }
 
 input,
@@ -2469,7 +2479,7 @@ span.is-active:after {
 }
 
 .hero__title {
-    font-size: 80px;
+    font-size: 60px;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 700;
@@ -3554,8 +3564,10 @@ span.is-active:after {
 .single-game-slider .slick-arrow {
     width: 40px;
     height: 40px;
-    background-image: #7a5deb;
-    box-shadow: 0px 5px 20px 0px rgba(180, 164, 245, 0.5);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -ms-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    box-shadow: 0px 5px 20px 0px rgba(255, 200, 39, 0.96);
     color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -3595,6 +3607,14 @@ span.is-active:after {
 
 /* single game css end */
 /* game info css start */
+.game-info h3{
+    margin: 1rem 0;
+}
+
+.game-info p{
+    margin-bottom: 1rem;
+}
+
 .game-compatible {
     padding: 15px 30px;
     background-color: rgba(5, 5, 67, 0);
@@ -4513,9 +4533,9 @@ img.emoji {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background-image: -moz-linear-gradient(0deg, #ff9c19 0%, #ff9c19 100%);
-    background-image: -webkit-linear-gradient(0deg, #ff9c19 0%, #ff9c19 100%);
-    background-image: -ms-linear-gradient(0deg, #ff9c19 0%, #ff9c19 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -ms-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
     cursor: pointer;
     z-index: 1;
 }
@@ -5163,9 +5183,9 @@ img.emoji {
     right: 0;
     width: 20px;
     height: 20px;
-    background-image: -moz-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
-    background-image: -webkit-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
-    background-image: -ms-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -webkit-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
+    background-image: -ms-linear-gradient(0deg, #ffdd2d 0%, #ff9c19 100%);
     box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
     color: #ffffff;
     border-radius: 50%;
