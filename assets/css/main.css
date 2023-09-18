@@ -2769,12 +2769,14 @@ span.is-active:after {
 @media (max-width: 1199px) {
     .single-game-hero .game-img {
         width: 35%;
+        border-radius: 20%;
     }
 }
 
 @media (max-width: 575px) {
     .single-game-hero .game-img {
         width: 50%;
+        border-radius: 20%;
     }
 }
 
