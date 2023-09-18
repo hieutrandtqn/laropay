@@ -22,7 +22,20 @@
     });
 
     // mobile menu js
-    $(".navbar-collapse>ul>li>a, .navbar-collapse ul.sub-menu>li>a").on("click", function () {
+    $(".navbar-collapse>ul>li>a").before().on("click", function (event) {
+      event.preventDefault();
+      let element = $(this).parent("li");
+      if (element.hasClass("open")) {
+        element.removeClass("open");
+        element.find("li").removeClass("open");
+      }
+      else {
+        element.addClass("open");
+        element.siblings("li").removeClass("open");
+        element.siblings("li").find("li").removeClass("open");
+      }
+    });
+    $(".navbar-collapse ul.sub-menu>li>a").on("click", function (event) {
       let element = $(this).parent("li");
       if (element.hasClass("open")) {
         element.removeClass("open");

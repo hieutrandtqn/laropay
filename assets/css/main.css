@@ -2748,6 +2748,10 @@ span.is-active:after {
     margin-bottom: 15px;
 }
 
+.single-game-hero .game-img {
+    border-radius: 20%;
+}
+
 @media (max-width: 1199px) {
     .single-game-hero .game-name {
         font-size: 56px;
@@ -3928,7 +3932,7 @@ span.is-active:after {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #3e3e96;
+    border-bottom: 1px solid #fffa77;
 }
 
 .view-all-header .title {
