@@ -2,6 +2,7 @@
   "use strict";
 
   $(window).on('load', function () {
+
     //preloader
     $(".preloader").delay(300).animate({
       "opacity": "0"
@@ -256,16 +257,6 @@
     });
   });
 
-  function showMoreContent() {
-    var moreText = document.getElementById("more-text");
-    var btnText = document.getElementById("more-btn");
-
-    // if (btnText.style.display === "visible") {
-      btnText.style.display = "none";
-      moreText.style.display = "inline";
-    // }
-  }
-
   $(window).on("scroll", function () {
     if ($(this).scrollTop() > 200) {
       $(".scroll-to-top").fadeIn(200);
@@ -280,4 +271,14 @@
     $("html, body").animate({ scrollTop: 0 }, 300);
   });
 
+  // Show more hidden content
+  $(".more-btn").on("click", function (event) {
+    var moreText = document.getElementById("more-text");
+    var btnText = document.getElementById("more-btn");
+
+    // if (btnText.style.display === "visible") {
+      btnText.style.display = "none";
+      moreText.style.display = "inline";
+    // }
+  });
 })(jQuery);

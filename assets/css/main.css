@@ -1529,7 +1529,7 @@ select {
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    color: #c4cbf9;
+    color: #7A5EEB;
     background-color: transparent;
     height: 50px;
     border-radius: 4px;
@@ -3615,6 +3615,16 @@ span.is-active:after {
     margin-bottom: 1rem;
 }
 
+.game-info ol li {
+    list-style: decimal inside none;
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+.game-info .section-content a {
+    color: #cb28ae;
+}
+
 .game-compatible {
     padding: 15px 30px;
     background-color: rgba(5, 5, 67, 0);
@@ -4403,7 +4413,7 @@ img.emoji {
     margin-right: 30px;
     margin-top: -100px;
     padding: 30px;
-    background-color: #160351;
+    background-color: #ffc310;
 }
 
 @media (max-width: 575px) {
@@ -4431,7 +4441,7 @@ img.emoji {
 }
 
 .post-card.style--two .time {
-    color: #766ee6;
+    color: #b84745;
     margin-top: 20px;
 }
 
@@ -4457,7 +4467,7 @@ img.emoji {
 .post-card.style--three .post-card__content {
     margin: -140px 135px 0;
     padding: 30px;
-    background-color: #160351;
+    background-color: #ffc310;
 }
 
 @media (max-width: 991px) {
@@ -4489,7 +4499,7 @@ img.emoji {
 }
 
 .post-card.style--three .time {
-    color: #766ee6;
+    color: #b84745;
     margin-top: 20px;
 }
 
@@ -4576,7 +4586,7 @@ img.emoji {
 
 .blog-details__header {
     padding: 80px 95px;
-    background-color: #160351;
+    background-color: #ffc310;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -4792,7 +4802,7 @@ img.emoji {
 
 .author {
     padding: 50px;
-    background-color: #160351;
+    background-color: #ffc310;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -4951,7 +4961,7 @@ img.emoji {
 }
 
 .contact-item__content a {
-    color: #c4cbf9;
+    color: #7A5EEB;
 }
 
 /* contact section end */
@@ -5081,7 +5091,7 @@ img.emoji {
 
 .widget {
     padding: 30px;
-    background-color: #160351;
+    background-color: #ffc310;
     box-shadow: 0px 10px 5px 0px rgba(119, 123, 146, 0.02);
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -5092,6 +5102,7 @@ img.emoji {
 
 .widget__title {
     margin-bottom: 20px;
+    color:#b84745;
 }
 
 .widget__search .form-control {
@@ -5134,7 +5145,7 @@ img.emoji {
 }
 
 .widget .social-links li a {
-    color: #9794c2;
+    color: #7A5EEB;
 }
 
 .widget .social-links li a:hover {
@@ -5174,7 +5185,7 @@ img.emoji {
 }
 
 .post-item__meta li span {
-    color: #8984dc;
+    color: #7A5EEB;
 }
 
 .small-post-slider .slick-arrow {
@@ -5229,7 +5240,7 @@ img.emoji {
 
 .tags-list a {
     font-size: 14px;
-    color: #c1bdf4;
+    color: #4c3789;
     padding: 12px 30px;
     border: 1px solid #4c3789;
     border-radius: 999px;
