@@ -2070,6 +2070,12 @@ textarea:focus,
 
 .header .main-menu li.menu_has_children {
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header .main-menu li.menu_has_children .sub-menu {
+    display: none;
 }
 
 .header .main-menu li.menu_has_children.open .sub-menu {
@@ -2082,33 +2088,36 @@ textarea:focus,
     }
 }
 
-.header .main-menu li.menu_has_children>a::before {
-    position: absolute;
-    content: "\f107";
-    font-family: 'Line Awesome Free';
+.header .main-menu li.menu_has_children>.expander {
+    display: block;
     font-size: 16px;
     font-weight: 900;
-    top: 0;
-    right: 0;
     color: #000000;
+    margin-left: -5px;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    display: none;
 }
 
 @media (max-width: 1199px) {
-    .header .main-menu li.menu_has_children>a::before {
+    .header .main-menu li.menu_has_children>.expander {
         display: block;
+        position: absolute;
         top: 9px;
+        right: -5px;
     }
 }
 
-.header .main-menu li.menu_has_children:hover>a::before {
+@media (max-width: 1199px) {
+    .header .main-menu li.menu_has_children {
+       display: block;
+    }
+}
+
+.header .main-menu li.menu_has_children:hover>.expander  {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    color: #ffffff;
 }
 
 .header .main-menu li a {
