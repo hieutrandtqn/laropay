@@ -2114,11 +2114,11 @@ textarea:focus,
 
 @media (max-width: 1199px) {
     .header .main-menu li.menu_has_children {
-       display: block;
+        display: block;
     }
 }
 
-.header .main-menu li.menu_has_children.open>.expander  {
+.header .main-menu li.menu_has_children.open>.expander {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -2442,27 +2442,47 @@ span.is-active:after {
 }
 
 .hero__content .cmn-btn {
-    margin-top: 40px;
+    position: absolute;
+    bottom: 50px;
 }
 
 .hero__content .carousel {
     position: relative;
     height: 550px;
+    margin: 0;
 }
 
 .hero__content .carousel-inner {
     height: 100%;
 }
 
-.hero__content .carousel-item {
-    width: 90%;
+.hero__content .image-cover {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.hero__content .image-cover .overlay {
+    padding: 50px 70px;
+    height: 500px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1199px) {
+    .hero__content .image-cover .overlay {
+        padding: 50px;
+    }
 }
 
 .hero__content .carousel-control-prev {
-    transform: translateX(-80px);
+    transform: translateX(-30px);
 }
+
 .hero__content .carousel-control-next {
-    transform: translateX(80px);
+    transform: translateX(30px);
 }
 
 .hero__sub-title {
@@ -2492,7 +2512,7 @@ span.is-active:after {
 }
 
 .hero__title {
-    font-size: 60px;
+    font-size: 50px;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 700;
@@ -2501,19 +2521,19 @@ span.is-active:after {
 
 @media (max-width: 1199px) {
     .hero__title {
-        font-size: 62px;
+        font-size: 48px;
     }
 }
 
 @media (max-width: 767px) {
     .hero__title {
-        font-size: 48px;
+        font-size: 38px;
     }
 }
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 
@@ -3626,11 +3646,11 @@ span.is-active:after {
 
 /* single game css end */
 /* game info css start */
-.game-info h3{
+.game-info h3 {
     margin: 1rem 0;
 }
 
-.game-info p{
+.game-info p {
     margin-bottom: 1rem;
 }
 
@@ -4942,7 +4962,7 @@ img.emoji {
     -o-border-radius: 20px;
 }
 
-.contact-form-wrapper label{
+.contact-form-wrapper label {
     color: #cb28ae;
 }
 
@@ -5125,7 +5145,7 @@ img.emoji {
 
 .widget__title {
     margin-bottom: 20px;
-    color:#b84745;
+    color: #b84745;
 }
 
 .widget__search .form-control {
