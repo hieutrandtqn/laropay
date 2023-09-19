@@ -48,15 +48,15 @@
       }
     });
 
-    $(".navbar-collapse>ul>li>a").on("mouseenter", function () {
-      let element = $(this).parent("li");
-      element.addClass("open");
-      element.siblings("li").removeClass("open");
-      element.siblings("li").find("li").removeClass("open");
-    }).on("mouseleave", function () {
-      let element = $(this).parent("li");
-      element.find("li").removeClass("open");
-    })
+    // $(".navbar-collapse>ul>li>a").on("mouseenter", function () {
+    //   let element = $(this).parent("li");
+    //   element.addClass("open");
+    //   element.siblings("li").removeClass("open");
+    //   element.siblings("li").find("li").removeClass("open");
+    // }).on("mouseleave", function () {
+    //   let element = $(this).parent("li");
+    //   element.find("li").removeClass("open");
+    // })
 
     new WOW().init();
 

@@ -780,7 +780,7 @@ figure {
 
 .cmn-accordion .card {
     border: none;
-    background-color: #311a83;
+    background-color: #ffc310;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px !important;
@@ -798,7 +798,7 @@ figure {
 }
 
 .cmn-accordion .card-header {
-    background-color: #311a83;
+    background-color: #ffc310;
     padding: 0;
     margin-bottom: 0 !important;
     border: none;
@@ -814,7 +814,7 @@ figure {
     text-align: left;
     padding-right: 25px;
     font-size: 20px;
-    color: #ffffff;
+    color: #7A5EEB;
 }
 
 @media (max-width: 767px) {
@@ -878,6 +878,10 @@ figure {
 .cmn-accordion .card-body {
     padding: 30px 0;
     border-top: 1px solid #4129a2;
+}
+
+.cmn-accordion .card-body p {
+    color: #cb28ae;
 }
 
 @media (max-width: 575px) {
@@ -1468,12 +1472,12 @@ a:hover {
 
 .submit-btn {
     padding: 16px 50px;
-    background-color: #220a81;
-    box-shadow: 0px 4px 30px 15px rgba(0, 162, 255, 0.49), inset 0px 0px 12px 6px #30a8db;
+    background-image: -webkit-linear-gradient(-45deg, #ffdd2d 0%, #ff9c19 100%);
+    box-shadow: 0px 17px 40px 0px rgba(0, 0, 0, 0.53);
     position: relative;
     z-index: 9;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #000000;
     border-radius: 999px;
     -webkit-border-radius: 999px;
     -moz-border-radius: 999px;
@@ -1501,8 +1505,8 @@ a:hover {
 
 .form-control.style--two {
     padding: 15px 30px;
-    box-shadow: inset 0px 0px 5px 2px #30a8db;
-    border: 1px solid rgba(29, 46, 129, 0.3);
+    box-shadow: inset 0px 0px 5px 2px #ff9c19;
+    border: 1px solid rgb(255, 156, 25);
     background-color: rgba(38, 13, 76, 0);
     border-radius: 999px;
     -webkit-border-radius: 999px;
@@ -1514,8 +1518,8 @@ a:hover {
 
 .form-control.style--two:focus,
 .form-control.style--two:active {
-    box-shadow: inset 0px 0px 10px 2px #30a8db;
-    border-color: #30a8db !important;
+    box-shadow: inset 0px 0px 10px 2px #ff9c19;
+    border-color: 1d2e814d !important;
 }
 
 .form-control:focus {
@@ -1567,22 +1571,22 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-    color: #6180c0 !important;
+    color: #7a5eeb7e !important;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-    color: #6180c0 !important;
+    color: #7a5eeb7e !important;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-    color: #6180c0 !important;
+    color: #7a5eeb7e !important;
 }
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-    color: #6180c0 !important;
+    color: #7a5eeb7e !important;
 }
 
 input:focus,
@@ -2114,7 +2118,7 @@ textarea:focus,
     }
 }
 
-.header .main-menu li.menu_has_children:hover>.expander  {
+.header .main-menu li.menu_has_children.open>.expander  {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -3435,7 +3439,7 @@ span.is-active:after {
 
 .games-search-wrapper {
     padding: 30px;
-    background-color: #311a83;
+    background-color: #ffc310;
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -3502,7 +3506,7 @@ span.is-active:after {
 }
 
 .games-filter-from .nice-select .list {
-    background-color: #311a83;
+    background-color: #ffc310;
 }
 
 .games-filter-from .nice-select .list li.selected,
@@ -4929,13 +4933,17 @@ img.emoji {
 
 .contact-form-wrapper {
     padding: 30px;
-    background-color: #311a83;
+    background-color: #ffc310;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+}
+
+.contact-form-wrapper label{
+    color: #cb28ae;
 }
 
 .contact-item {
@@ -4951,8 +4959,8 @@ img.emoji {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(70, 15, 122, 0.6);
-    box-shadow: 0px 4px 10px 8px rgba(0, 162, 255, 0.15), inset 0px 0px 12px 6px #a816e5;
+    background-color: #ffdd2d;
+    box-shadow: 0px 4px 10px 8px rgba(255, 195, 15, 0.15), inset 0px 0px 12px 6px #ff9c19;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -4961,7 +4969,7 @@ img.emoji {
 }
 
 .contact-item__icon i {
-    color: #00a2ff;
+    color: #7A5EEB;
     font-size: 36px;
     text-shadow: 0 0 30px rgba(0, 162, 255, 0.5);
 }
@@ -4976,7 +4984,7 @@ img.emoji {
 }
 
 .contact-item__content a {
-    color: #7A5EEB;
+    color: #cb28ae;
 }
 
 /* contact section end */
