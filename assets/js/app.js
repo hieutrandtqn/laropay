@@ -243,6 +243,12 @@
     }
     bannerCarousel();
 
+    //Scrollspy offset
+    $('.nav-link').click(function (event) {
+      event.preventDefault();
+      $($(this).attr('href'))[0].scrollIntoView({block: "center", inline: "nearest"});
+    });
+
     // small-post-slider 
     $('.small-post-slider').slick({
       speed: 700,

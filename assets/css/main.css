@@ -221,6 +221,38 @@ a:hover {
 
 }
 
+/* table of content css */
+nav[data-toggle='toc'] .nav .nav {
+    display: block;
+}
+
+nav[data-toggle=toc] .nav>li>a {
+    color: #fffa77;
+}
+nav[data-toggle=toc] .nav>li>a:focus, nav[data-toggle=toc] .nav>li>a:hover {
+    color: #cb28ae;
+}
+ol {
+    counter-reset: item;
+    margin-left: 20px;
+}
+
+ol li {
+    display: block;
+}
+
+ol li:before {
+    content: counters(item, ". ") ". ";
+    counter-increment: item;
+}
+
+.navbar-nav .nav-link {
+    /* color: #ffff !important; */
+    font-size: 18px !important;
+}
+
+/* end table of content css */
+
 .hero.bg_img::before {
     content: '';
     width: 100%;
@@ -2472,7 +2504,7 @@ span.is-active:after {
     padding: 50px 70px;
     height: 60vh;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1199px) {
@@ -2493,7 +2525,7 @@ span.is-active:after {
     .hero__content .carousel-control-prev {
         display: none;
     }
-    
+
     .hero__content .carousel-control-next {
         display: none;
     }
@@ -4577,9 +4609,7 @@ img.emoji {
 }
 
 .post-author__name {
-    color: #ffffff;
-    width: calc(100% - 30px);
-    padding-left: 15px;
+    margin-left: 5px;
 }
 
 .blog-slider .slick-arrow {
@@ -4658,10 +4688,13 @@ img.emoji {
     }
 }
 
+.blog-details__category {
+    font-size: 16px;
+    color: #7A5EEB;
+}
+
 .blog-details__title {
     font-size: 60px;
-    text-align: center;
-    color: #b84745;
 }
 
 @media (max-width: 1199px) {
@@ -4671,12 +4704,24 @@ img.emoji {
 }
 
 @media (max-width: 991px) {
+
+    .blog-details__category,
+    .blog-details .meta-post span {
+        font-size: 14px;
+    }
+
     .blog-details__title {
         font-size: 36px;
     }
 }
 
 @media (max-width: 767px) {
+
+    .blog-details__category,
+    .blog-details .meta-post span {
+        font-size: 12px;
+    }
+
     .blog-details__title {
         font-size: 28px;
     }
@@ -4688,27 +4733,21 @@ img.emoji {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     align-items: center;
-    margin: -3px -12px;
+    font-size: 16px;
 }
 
 @media (max-width: 991px) {
     .blog-details .meta-post {
-        justify-content: center;
+        justify-content: left;
     }
 }
 
-.blog-details .meta-post li {
-    margin: 3px 12px;
+.blog-details a {
+    color: #7A5EEB;
 }
 
-.blog-details .meta-post .post-author__thumb {
-    width: 40px;
-    height: 40px;
-}
-
-.blog-details .meta-post .post-author__name {
-    width: calc(100% - 40px);
-    padding-left: 5px;
+.blog-details a:hover {
+    color: #cb28ae;
 }
 
 .blog-details .social-links {
