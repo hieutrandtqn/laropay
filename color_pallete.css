@@ -1,6 +1,7 @@
 .color {
     card_color: #ffc310;
     card_border_color: #ffd710;
+    card-text-color: #b84745;
     background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
     background-color:#350b2d;
     text-color: #cb28ae;

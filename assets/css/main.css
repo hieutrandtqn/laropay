@@ -2399,8 +2399,11 @@ span.is-active:after {
 /* header end */
 /* hero section css start */
 .hero {
-    padding-top: 158px;
-    padding-bottom: 300px;
+    /* padding-top: 158px;
+    padding-bottom: 200px; */
+    display: flex;
+    align-items: center;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -2448,8 +2451,9 @@ span.is-active:after {
 
 .hero__content .carousel {
     position: relative;
-    height: 550px;
+    height: 70vh;
     margin: 0;
+    margin-top: 155px;
 }
 
 .hero__content .carousel-inner {
@@ -2457,7 +2461,7 @@ span.is-active:after {
 }
 
 .hero__content .image-cover {
-    height: 500px;
+    height: 60vh;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -2466,9 +2470,9 @@ span.is-active:after {
 
 .hero__content .image-cover .overlay {
     padding: 50px 70px;
-    height: 500px;
+    height: 60vh;
     width: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
 }
 
 @media (max-width: 1199px) {
@@ -2484,6 +2488,17 @@ span.is-active:after {
 .hero__content .carousel-control-next {
     transform: translateX(30px);
 }
+
+@media (max-width: 480px) {
+    .hero__content .carousel-control-prev {
+        display: none;
+    }
+    
+    .hero__content .carousel-control-next {
+        display: none;
+    }
+}
+
 
 .hero__sub-title {
     font-size: 28px;
@@ -2533,7 +2548,7 @@ span.is-active:after {
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 24px;
+        font-size: 32px;
     }
 }
 
@@ -4625,12 +4640,16 @@ img.emoji {
 
 .blog-details__header {
     padding: 80px 95px;
-    background-color: #ffc310;
+    background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
+}
+
+.blog-details__header * {
+    color: #b84745;
 }
 
 @media (max-width: 991px) {
@@ -4642,6 +4661,7 @@ img.emoji {
 .blog-details__title {
     font-size: 60px;
     text-align: center;
+    color: #b84745;
 }
 
 @media (max-width: 1199px) {
@@ -4701,10 +4721,6 @@ img.emoji {
         justify-content: center;
         margin-top: 15px;
     }
-}
-
-.blog-details .social-links li span {
-    color: #ffffff;
 }
 
 .blog-details .social-links li a {
