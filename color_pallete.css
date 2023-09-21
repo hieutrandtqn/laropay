@@ -1,12 +1,32 @@
 .color {
-    card_color: #ffc310;
-    card_border_color: #ffd710;
-    card-text-color: #b84745;
+
+    /* Generic */
     background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
     background-color:#350b2d;
     text-color: #cb28ae;
     title-text-color: #fffa77;
     text-content-color: #7A5EEB;
-    shadow-color: 2.419px 9.703px 12.48px 0.52px rgba(255, 200, 39, 0.2)
+    shadow-color: 2.419px 9.703px 12.48px 0.52px #ffc82733;
+    
+    gradient:
+    #350B2D
+    #65385B
+    #AA4C4B
+    #D77D4E
+    #F3B855
+    #F9F871
 
+    #FFE5FF
+    #00C89B;
+
+    /* Primary card */
+    card_color: #ffc310;
+    card_border_color: #ffd710;
+    card-main-text-color: #b84745;
+
+    /* Secondary card */
+    card_color: #65385B;
+    card-main-text-color: #F9F871;
+    card-placeholder-text-color: #D77D4E;
+    
 }
