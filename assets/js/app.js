@@ -182,6 +182,7 @@
         fade: true,
         arrows: true,
         dots: false,
+        adaptiveHeight: true,
         prevArrow: '<div class="prev"><img src="assets/images/elements/prev-btn.png"></div>',
         nextArrow: '<div class="next"><img src="assets/images/elements/next-btn.png"></div>',
       });
