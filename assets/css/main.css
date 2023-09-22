@@ -4200,6 +4200,9 @@ img.emoji {
     background-color: rgba(62, 60, 184, 0.702);
     box-shadow: 1.045px 9.945px 35px 0px rgba(20, 25, 96, 0.79);
 }
+.slider {
+    min-height: 710px;
+}
 
 .testimonial-slider {
     margin-top: 200px;
