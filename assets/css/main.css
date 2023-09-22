@@ -779,7 +779,7 @@ figure {
 
 .cmn-accordion .card {
     border: none;
-    background-color: #ffc310;
+    background-color: #65385B;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px !important;
@@ -797,7 +797,7 @@ figure {
 }
 
 .cmn-accordion .card-header {
-    background-color: #ffc310;
+    background-color: #65385B;
     padding: 0;
     margin-bottom: 0 !important;
     border: none;
@@ -813,7 +813,7 @@ figure {
     text-align: left;
     padding-right: 25px;
     font-size: 20px;
-    color: #7A5EEB;
+    color: #F9F871;
 }
 
 @media (max-width: 767px) {
@@ -876,11 +876,11 @@ figure {
 
 .cmn-accordion .card-body {
     padding: 30px 0;
-    border-top: 1px solid #4129a2;
+    border-top: 1px solid #ffd710;
 }
 
 .cmn-accordion .card-body p {
-    color: #cb28ae;
+    color: #D77D4E;
 }
 
 @media (max-width: 575px) {
@@ -5046,6 +5046,14 @@ nav[data-toggle=toc] .nav>li>a:hover {
     margin-bottom: 0.5em;
 }
 
+.comments-area .comment-reply-title {
+    color: #fffa77;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+    font-size: 24px;
+}
+
 .comments-area label {
     display: block;
 }
@@ -5186,7 +5194,7 @@ nav[data-toggle=toc] .nav>li>a:hover {
 .faq-wrapper {
     padding: 120px 190px 0;
     /*background-color: #000033;*/
-    box-shadow: 2.581px -36.91px 29px 0px rgba(0, 0, 51, 0.29);
+    /*box-shadow: 2.581px -36.91px 29px 0px rgba(0, 0, 51, 0.29);*/
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -5320,6 +5328,7 @@ nav[data-toggle=toc] .nav>li>a:hover {
 .widget__title {
     margin-bottom: 20px;
     color: #fffa77;
+    font-size: 24px;
 }
 
 .widget__search .form-control {
@@ -5670,6 +5679,10 @@ fffa77 .widget__search button i {
 
 .footer-widget__title {
     margin-bottom: 25px;
+    color: #fffa77;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
 }
 
 .short-links li+li {
