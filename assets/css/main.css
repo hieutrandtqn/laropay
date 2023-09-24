@@ -729,19 +729,26 @@ figure {
     color: #000033;
 }
 
-.pagination .page-item.active .page-link {
+.paginationjs-pages ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.paginationjs-pages .paginationjs-page.active a {
     background-image: -moz-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
     background-image: -webkit-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
     background-image: -ms-linear-gradient(-30deg, #c165dd 0%, #5c27fe 100%);
     box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
     color: #ffffff;
+    cursor: pointer;
 }
 
-.pagination .page-item.disabled .page-link {
+.paginationjs-pages .paginationjs-page.disabled a {
     color: #8079db;
 }
 
-.pagination .page-item .page-link {
+.paginationjs-pages .paginationjs-page a {
     width: 42px;
     height: 42px;
     display: flex;
@@ -752,25 +759,32 @@ figure {
     background-image: none;
     background-color: transparent;
     box-shadow: none;
-    color: #7f96dd;
+    color: #fffa77;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
 }
 
-.pagination .page-item .page-link.prev,
-.pagination .page-item .page-link.next {
+.paginationjs-pages .paginationjs-prev,
+.paginationjs-pages .paginationjs-next {
     width: auto;
     height: auto;
+    font-size: 26px;
+    margin: 0 15px;
     background-image: none;
     background-color: transparent;
     box-shadow: none;
+    user-select: none;
+    color: #ffffff;
 }
 
-.pagination .page-item .page-link.next {
-    color: #ffffff;
+.paginationjs-pages .paginationjs-prev.disabled,
+.paginationjs-pages .paginationjs-next.disabled {
+    color: #5e465b;
 }
 
 .cmn-accordion .card+.card {
@@ -5391,7 +5405,11 @@ fffa77 .widget__search button i {
 }
 
 .post-item__content a {
-    color: #D77D4E
+    color: #ffffff;
+}
+
+.post-item__content a:hover {
+    color: #fc43ff;
 }
 
 .post-item__meta {
@@ -5464,6 +5482,10 @@ fffa77 .widget__search button i {
     flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: 1px dashed #32148c;
+}
+
+.category-list li a span:hover {
+    color: #fc43ff;
 }
 
 .category-list li .value {

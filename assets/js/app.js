@@ -248,7 +248,7 @@
     //Scrollspy offset
     $('.nav-link').click(function (event) {
       event.preventDefault();
-      $($(this).attr('href'))[0].scrollIntoView({block: "center", inline: "nearest"});
+      $($(this).attr('href'))[0].scrollIntoView({ block: "center", inline: "nearest" });
     });
 
     // small-post-slider 
@@ -312,4 +312,69 @@
     moreText.style.display = "inline";
     // }
   });
+
+
+  //Blog pagination
+  let posts = Array.from(document.getElementsByClassName("post-card"));
+  $('.pagination').pagination({
+    dataSource: Array.from(posts),
+    pageSize: 3,
+    callback: function (data, pagination) {
+      for (let item of posts) {
+        item.style.display = "none";
+      }
+      for (let item of data) {
+        item.style.display = "block";
+      }
+    }
+  })
+
+  // let currentPage = 1;
+  // const itemPerPage = 3;
+  // let links = document.getElementsByClassName("page-item");
+  // let posts = document.getElementsByClassName("post-card");
+  // const numOfPage = Math.ceil(posts.length/itemPerPage);
+
+  // $('.pagination').append('<li class="page-item"><p class="page-link prev"><i class="las la-angle-double-left"></i>Prev</p></li>');
+  // for (let i = 0; i < numOfPage ; i++) {
+  //   $('.pagination').append(`<li class="page-item${i === currentPage - 1 ? " active" : ""}"><p class="page-link">${i + 1}</p></li>`);
+  // }
+  // $('.pagination').append('<li class="page-item"><p class="page-link next">Next<i class="las la-angle-double-right"></i></p></li>')
+
+  // $(".page-link").on("click", function (event) {
+  //   let value = $(this).text();
+  //   let element = $(this).parent("li");
+
+  //   if (isNaN(value)) {
+  //     if (value === "Prev" && currentPage > 1) {
+  //       currentPage--;
+  //       element.siblings("li").removeClass("active");
+  //       links[currentPage].classList.add("active");
+  //     } else if (value === "Next" && currentPage < links.length - 2) {
+  //       currentPage++;
+  //       element.siblings("li").removeClass("active");
+  //       links[currentPage].classList.add("active");
+  //     }
+  //   } else {
+  //     element.siblings("li").removeClass("active");
+  //     $(this).parent("li").addClass("active")
+  //     currentPage = parseInt(value);
+  //   }
+  //   renderBlogPaginated();
+  // });
+
+  // function renderBlogPaginated() {
+  //   let startItem = itemPerPage * (currentPage - 1);
+  //   let endItem = itemPerPage * currentPage - 1;
+  //   Array.from(posts).forEach((item, key) => {
+  //     if (key >= startItem && key <= endItem) {
+  //       item.style.display = "block";
+  //     } else {
+  //       item.style.display = "none";
+  //     }
+  //   });
+  // }
+  // renderBlogPaginated();
+
+
 })(jQuery);
