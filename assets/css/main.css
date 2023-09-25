@@ -4481,6 +4481,17 @@ img.emoji {
     box-shadow: 0px 1px 6px 0px rgba(40, 7, 169, 0.38);
 }
 
+.post-card__category {
+    font-size: 14px;
+    color: #b84745;
+}
+
+@media (max-width: 767px) {
+    .post-card__category {
+        font-size: 12px;
+    }
+}
+
 .post-card.style--two {
     background-color: transparent;
     border-radius: 0;
