@@ -3699,6 +3699,13 @@ span.is-active:after {
     font-size: 18px;
 }
 
+.game-info .section-content ul li {
+    list-style: disc inside none;
+    margin-bottom: 0.6rem;
+    margin-left: 1.3em;
+    font-size: 18px;
+}
+
 .game-info .section-content a {
     color: #cb28ae;
 }
