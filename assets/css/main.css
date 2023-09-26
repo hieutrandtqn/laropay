@@ -2468,8 +2468,7 @@ span.is-active:after {
 }
 
 .hero__content .cmn-btn {
-    position: absolute;
-    bottom: 50px;
+    margin-top: 20px;
 }
 
 .hero__content .carousel {
@@ -2551,7 +2550,7 @@ span.is-active:after {
 }
 
 .hero__title {
-    font-size: 34px;
+    font-size: 34px !important;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 700;
@@ -2560,19 +2559,19 @@ span.is-active:after {
 
 @media (max-width: 1199px) {
     .hero__title {
-        font-size: 30px;
+        font-size: 30px !important;
     }
 }
 
 @media (max-width: 767px) {
     .hero__title {
-        font-size: 26px;
+        font-size: 26px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 22px;
+        font-size: 22px !important;
     }
 }
 
@@ -3246,11 +3245,12 @@ span.is-active:after {
 .game-card__title {
     text-transform: uppercase;
     margin-bottom: 8px;
+    font-size: 17px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
     .game-card__title {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 
@@ -3261,11 +3261,6 @@ span.is-active:after {
 @media (max-width: 575px) {
     .game-card__ratings {
         margin-left: 110px;
-    }
-}
-
-@media (max-width: 575px) {
-    .game-card__ratings {
         margin-left: 0;
     }
 }
@@ -3280,7 +3275,12 @@ span.is-active:after {
 }
 
 .game-card__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 30%;
+    max-width: 150px;
+    font-size: 14px;
 }
 
 @media (max-width: 575px) {
@@ -3299,7 +3299,7 @@ span.is-active:after {
 
 @media (max-width: 1199px) {
     .game-card__action>p {
-        font-size: 14px;
+        font-size: 1em;
     }
 }
 
@@ -4811,6 +4811,10 @@ h4 {
     margin-top: 20px;
 }
 
+.blog-details__content p span{
+    font-size: 18px;
+}
+
 .blog-details__content p a {
     color: #6157f9;
 }
@@ -4823,6 +4827,7 @@ h4 {
 
 .blog-details__content ul li>* {
     vertical-align: text-top;
+    font-size: 18px;
 }
 
 .blog-details__content blockquote {

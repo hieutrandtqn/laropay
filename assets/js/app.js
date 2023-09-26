@@ -315,19 +315,11 @@
 
 
   //Blog pagination
-  let posts = Array.from(document.getElementsByClassName("post-card"));
-  $('.pagination').pagination({
-    dataSource: Array.from(posts),
-    pageSize: 3,
-    callback: function (data, pagination) {
-      for (let item of posts) {
-        item.style.display = "none";
-      }
-      for (let item of data) {
-        item.style.display = "block";
-      }
-    }
-  })
+  if (document.querySelector('.pagination') !== null) {let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+    return e.filtered === undefined || e.filtered !== false;
+  });
+  updatePagination(posts);}
+  
 
   // let currentPage = 1;
   // const itemPerPage = 3;
@@ -376,5 +368,62 @@
   // }
   // renderBlogPaginated();
 
+  //Filter by keyword
+  $("#search-blog-btn").on("click", function (event) {
+    let keyword = $("#search-blog-input").val().toLocaleLowerCase();
+    let allPost = Array.from(document.getElementsByClassName("post-card"));
 
+    for (let item of allPost) {
+      const title = item.querySelector(".post-card__title").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+      const content = item.querySelector(".post-card__content p").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+
+      if (title.includes(keyword) || content.includes(keyword)) {
+        item.setAttribute("filtered", false);
+      }else {
+        item.setAttribute("filtered", true);
+      }
+    }
+    let filteredPost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
+    });
+    updatePagination(allPost, filteredPost)
+  })
+
+  //Filter by tag
+  $(".category-list .caption").on("click", function (event) {
+    let keyword = $(this).text().toLowerCase();
+    let allPost = Array.from(document.getElementsByClassName("post-card"));
+
+    for (let item of allPost) {
+      const category = item.querySelector(".post-card__category").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+
+      if (category.includes(keyword)) {
+        item.setAttribute("filtered", false);
+      }else {
+        item.setAttribute("filtered", true);
+      }
+    }
+    let filteredPost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
+    });
+    updatePagination(allPost, filteredPost)
+  })
+
+  function updatePagination(allPost, filteredPost) {
+    $('.pagination').pagination({
+      dataSource: Array.from(filteredPost || allPost),
+      pageSize: 3,
+      callback: function (data, pagination) {
+        for (let item of allPost) {
+          item.style.display = "none";
+        }
+        for (let item of data) {
+          item.style.display = "block";
+        }
+        if (data.length > 0) {
+          data[0].scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        }
+      }
+    })
+  }
 })(jQuery);
