@@ -2530,15 +2530,15 @@ span.is-active:after {
 
 @media (max-width: 991px) {
     .hero__content .carousel-item:nth-child(1) .image-cover {
-        background-image: url(/assets/images/elements/Banner-1.webp) !important;
+        background-image: url(../../assets/images/elements/Banner-1.png) !important;
     }
 
     .hero__content .carousel-item:nth-child(2) .image-cover {
-        background-image: url(/assets/images/elements/Banner-2.webp) !important;
+        background-image: url(../../assets/images/elements/Banner-2.png) !important;
     }
 
     .hero__content .carousel-item:nth-child(3) .image-cover {
-        background-image: url(/assets/images/elements/Banner-3.webp) !important;
+        background-image: url(../../assets/images/elements/Banner-3.png) !important;
     }
 
     .hero__content .image-cover {
@@ -3372,7 +3372,7 @@ span.is-active:after {
     }
 
     .game-card__action .download-buttons a {
-        width: 150px;
+        width: 130px;
     }
 }
 
