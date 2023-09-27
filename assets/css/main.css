@@ -4532,14 +4532,18 @@ img.emoji {
     position: relative;
 }
 
-.post-card__content .post-card__category {
+.post-card__content p {
+    color: #7A5EEB;
+}
+
+.post-card__category a,.post-card__category {
     font-size: 14px;
-    color: #b84745;
+    color: #b84745 !important;
     font-weight: 600;
 }
 
-.post-card__content p {
-    color: #7A5EEB;
+.post-card__category a:hover {
+    color: #fc43ff !important;
 }
 
 .post-card__content .date {
