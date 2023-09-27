@@ -1110,11 +1110,11 @@ blockquote p {
 }
 
 .scroll-to-top {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     position: fixed;
     bottom: 5%;
-    right: 5%;
+    right: 2%;
     display: none;
     z-index: 99999;
     cursor: pointer;
@@ -1128,9 +1128,10 @@ blockquote p {
 }
 
 .scroll-to-top .scroll-icon {
-    font-size: 36px;
+    font-size: 34px;
     color: #000000;
-    display: inline-block;
+    display: block;
+    margin-top: 4px;
 }
 
 .preloader {
@@ -4531,6 +4532,12 @@ img.emoji {
     position: relative;
 }
 
+.post-card__content .post-card__category {
+    font-size: 14px;
+    color: #b84745;
+    font-weight: 600;
+}
+
 .post-card__content p {
     color: #7A5EEB;
 }
@@ -4559,11 +4566,6 @@ img.emoji {
     background-image: -webkit-linear-gradient(-45deg, #c165dd 0%, #5c27fe 100%);
     background-image: -ms-linear-gradient(-45deg, #c165dd 0%, #5c27fe 100%);
     box-shadow: 0px 1px 6px 0px rgba(40, 7, 169, 0.38);
-}
-
-.post-card__category {
-    font-size: 14px;
-    color: #b84745;
 }
 
 @media (max-width: 767px) {
@@ -5826,6 +5828,24 @@ fffa77 .widget__search button i {
 
 .copy-right-text a {
     color: #ec038b;
+}
+
+#cta {
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+    z-index: 9999
+}
+
+#cta img {
+    display: block;
+    width: 50px;
+    margin-bottom: 25px;
+    min-height: 1px;
+}
+
+#cta a {
+    display: block;
 }
 
 .social-links {
