@@ -729,7 +729,7 @@ figure {
     color: #000033;
 }
 
-.paginationjs-pages ul{
+.paginationjs-pages ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1179,13 +1179,15 @@ blockquote p {
     animation-delay: -1.0s;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     display: inline;
     font-size: 16px;
     margin-right: 10px;
 }
 
-input[type=checkbox]+label, input[type=radio]+label {
+input[type=checkbox]+label,
+input[type=radio]+label {
     display: inline;
 }
 
@@ -2426,17 +2428,14 @@ span.is-active:after {
     padding-bottom: 200px; */
     display: flex;
     align-items: center;
-    height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-@media (max-width: 1199px) {
-    .hero {
-        padding-top: 100px;
-        padding-bottom: 190px;
-        overflow: hidden;
-    }
+.hero {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    overflow: hidden;
 }
 
 .hero__shape {
@@ -2448,6 +2447,11 @@ span.is-active:after {
 
 .hero__shape img {
     width: 100%;
+}
+
+.hero__content {
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .hero__content p {
@@ -2473,9 +2477,34 @@ span.is-active:after {
 
 .hero__content .carousel {
     position: relative;
-    height: 70vh;
+    height: 400px;
     margin: 0;
-    margin-top: 155px;
+    margin-top: 55px;
+}
+
+@media (max-width: 1199px) {
+    .hero__content .carousel {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero__content .carousel {
+        margin-top: 0px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero__content .carousel {
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__content .carousel {
+        height: 400px;
+    }
 }
 
 .hero__content .carousel-inner {
@@ -2483,7 +2512,7 @@ span.is-active:after {
 }
 
 .hero__content .image-cover {
-    height: 60vh;
+    height: 400px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -2493,14 +2522,53 @@ span.is-active:after {
 
 .hero__content .image-cover .overlay {
     padding: 50px 70px;
-    height: 60vh;
+    height: 400px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
+    .hero__content .carousel-item:nth-child(1) .image-cover {
+        background-image: url(/assets/images/elements/Banner-1.webp) !important;
+    }
+
+    .hero__content .carousel-item:nth-child(2) .image-cover {
+        background-image: url(/assets/images/elements/Banner-2.webp) !important;
+    }
+
+    .hero__content .carousel-item:nth-child(3) .image-cover {
+        background-image: url(/assets/images/elements/Banner-3.webp) !important;
+    }
+
+    .hero__content .image-cover {
+        height: 600px;
+    }
+
+    .hero__content .image-cover .overlay {
+        padding: 10px 20px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero__content .image-cover {
+        height: 500px;
+    }
+
     .hero__content .image-cover .overlay {
         padding: 50px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__content .image-cover {
+        height: 400px;
+    }
+
+    .hero__content .image-cover .overlay {
+        padding: 50px;
+        height: 400px;
     }
 }
 
@@ -3177,15 +3245,18 @@ span.is-active:after {
     position: relative;
 }
 
-@media (max-width: 575px) {
+
+
+@media (min-width: 991px) {
     .game-card__content {
-        justify-content: center;
+        min-height: 235px;
     }
 }
 
 .game-card__content p,
 .game-card__content span {
     color: #7A5EEB;
+    font-size: 15px;
 }
 
 .game-card__details {
@@ -3195,6 +3266,11 @@ span.is-active:after {
 @media (max-width: 575px) {
     .game-card__details {
         width: 100%;
+    }
+
+    .game-card__action .mb-2 {
+        text-align: left;
+        margin-left: 5px;
     }
 }
 
@@ -3240,6 +3316,7 @@ span.is-active:after {
 
 .game-card__info .content a {
     color: #b84745;
+    font-size: 15px;
 }
 
 .game-card__title {
@@ -3275,31 +3352,26 @@ span.is-active:after {
 }
 
 .game-card__action {
+    max-width: 30%;
+    text-align: center;
+}
+
+.game-card__action .download-buttons {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 30%;
-    max-width: 150px;
     font-size: 14px;
+    flex-flow: row wrap;
 }
 
 @media (max-width: 575px) {
     .game-card__action {
-        width: 100%;
+        max-width: 100%;
         text-align: center;
         margin-top: 20px;
     }
-}
 
-@media (max-width: 575px) {
-    .game-card__action {
-        text-align: left;
-    }
-}
-
-@media (max-width: 1199px) {
-    .game-card__action>p {
-        font-size: 1em;
+    .game-card__action .download-buttons a {
+        width: 150px;
     }
 }
 
@@ -4192,7 +4264,7 @@ img.emoji {
     text-transform: uppercase;
     color: #00ffff;
     margin-top: 6px;
-    
+
 }
 
 @media (min-width: 767px) {
@@ -4221,6 +4293,7 @@ img.emoji {
     background-color: rgba(62, 60, 184, 0.702);
     box-shadow: 1.045px 9.945px 35px 0px rgba(20, 25, 96, 0.79);
 }
+
 .slider {
     min-height: 710px;
 }
@@ -4811,7 +4884,7 @@ h4 {
     margin-top: 20px;
 }
 
-.blog-details__content p span{
+.blog-details__content p span {
     font-size: 18px;
 }
 
@@ -5071,6 +5144,7 @@ nav[data-toggle=toc] .nav>li>a:hover {
     .related-post .image-wrapper {
         height: auto;
     }
+
     .related-post .image-wrapper img {
         width: 100%;
         height: auto;
@@ -5107,7 +5181,8 @@ nav[data-toggle=toc] .nav>li>a:hover {
     padding: 0 15px;
 }
 
-.comment-form input[type=text], .comment-form input[type=email] {
+.comment-form input[type=text],
+.comment-form input[type=email] {
     border-radius: 20px;
     font-size: .97em;
     height: 2.507em;
