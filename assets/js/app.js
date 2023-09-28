@@ -48,12 +48,23 @@
       }
     });
 
-    $(".navbar-collapse>ul>li>a").on("mouseenter", function () {
-      let element = $(this).parent("li");
-      element.addClass("open");
-      element.siblings("li").removeClass("open");
-      element.siblings("li").find("li").removeClass("open");
-    })
+
+    var timer;
+
+    $(".navbar-collapse>ul>li>a").on({
+      'mouseover': function () {
+        let element = $(this).parent("li");
+        timer = setTimeout(function () {
+          element.addClass("open");
+          element.siblings("li").removeClass("open");
+          element.siblings("li").find("li").removeClass("open");
+        }, 1000);
+      },
+      'mouseout': function () {
+        clearTimeout(timer);
+      }
+    });
+
     // .on("mouseleave", function () {
     //   let element = $(this).parent("li");
     //   element.find("li").removeClass("open");
@@ -315,11 +326,13 @@
 
 
   //Blog pagination
-  if (document.querySelector('.pagination') !== null) {let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
-    return e.filtered === undefined || e.filtered !== false;
-  });
-  updatePagination(posts);}
-  
+  if (document.querySelector('.pagination') !== null) {
+    let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+      return e.filtered === undefined || e.filtered !== false;
+    });
+    updatePagination(posts);
+  }
+
 
   // let currentPage = 1;
   // const itemPerPage = 3;
@@ -375,22 +388,27 @@
 
     for (let item of allPost) {
       const title = item.querySelector(".post-card__title").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
-      const content = item.querySelector(".post-card__content p").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+      const content = item.querySelectorAll(".post-card__content p")[1].textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
 
       if (title.includes(keyword.toLowerCase()) || content.includes(keyword.toLowerCase())) {
         item.setAttribute("filtered", false);
-      }else {
+      } else {
         item.setAttribute("filtered", true);
       }
     }
-    let filteredPost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+    let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
-    updatePagination(allPost, filteredPost);
+    updatePagination(allPost, visiblePost);
 
-    $(".page-info").css({display: "none"});
-    $(".search-result").remove();
+    $(".page-info").css({ display: "none" });
+    $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
     $(".page-result").append(`<p class="search-result">Search result for: ${keyword}</p>`);
+
+    if (visiblePost.length === 0) {
+      $(".page-result").append(`<p class="not-found">Nothing found</p>
+      <p class="not-found-desc">Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>`);
+    }
   })
 
   //Filter by tag
@@ -403,47 +421,31 @@
 
       if (category.includes(keyword.toLowerCase())) {
         item.setAttribute("filtered", false);
-      }else {
+      } else {
         item.setAttribute("filtered", true);
       }
     }
-    let filteredPost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+    let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
-    updatePagination(allPost, filteredPost)
+    updatePagination(allPost, visiblePost)
 
-    $(".page-info").css({display: "none"});
-    $(".search-result").remove();
-    $(".page-result").append(`<p class="category-result">Kategorya: ${keyword}</p>`);
+    $(".page-info").css({ display: "none" });
+    $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
+    $(".page-result").append(`<p class="category-result">Category: ${keyword}</p>`);
   })
 
   //On author clicked
-  $(".author").on("click", function (event) {
+  $(".post-author").on("click", function (event) {
     let keyword = $(".author .name").text();
-    let allPost = Array.from(document.getElementsByClassName("post-card"));
 
-    for (let item of allPost) {
-      const category = item.querySelector(".post-card__category").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+    window.location.href = "blog.html?author=" + keyword.replace(" ", "-").toLowerCase();
 
-      if (category.includes(keyword.toLowerCase())) {
-        item.setAttribute("filtered", false);
-      }else {
-        item.setAttribute("filtered", true);
-      }
-    }
-    let filteredPost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
-      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
-    });
-    updatePagination(allPost, filteredPost)
-
-    $(".page-info").css({display: "none"});
-    $(".search-result").remove();
-    $(".page-result").append(`<p class="category-result">Kategorya: ${keyword}</p>`);
   })
 
-  function updatePagination(allPost, filteredPost) {
+  function updatePagination(allPost, visiblePost) {
     $('.pagination').pagination({
-      dataSource: Array.from(filteredPost || allPost),
+      dataSource: Array.from(visiblePost || allPost),
       pageSize: 3,
       callback: function (data, pagination) {
         for (let item of allPost) {
@@ -453,18 +455,50 @@
           item.style.display = "block";
         }
         if (data.length > 0) {
-          $('.pagination').css({display: "block"});
-          data[0].scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        }else {
-          $('.pagination').css({display: "none"});
-        }
+          $('.pagination').css({ display: "block" });
 
-        if (data.length > 1) {
-          $('.pagination').css({display: "flex"});
-        }else {
-          $('.pagination').css({display: "none"});
+        } else {
+          $('.pagination').css({ display: "none" });
         }
+        if (data.length > 1) {
+          $('.pagination').css({ display: "flex" });
+        } else {
+          $('.pagination').css({ display: "none" });
+        }
+        $("html, body").animate({ scrollTop: 0 }, 200);
       }
     })
+  }
+
+  if (window.location.href.indexOf("?author=") !== -1) {
+    let allPost = Array.from(document.getElementsByClassName("post-card"));
+    let allAuthor = Array.from(document.getElementsByClassName("author-result"));
+    let keyword = window.location.href.slice(window.location.href.indexOf("?author=") + 8, window.location.href.length);
+
+    for (let item of allAuthor) {
+      const result = item.querySelector("." + keyword);
+      if (result === undefined) {
+        item.querySelector("." + keyword).style.display = "none";
+      } else {
+        item.querySelector("." + keyword).style.display = "flex";
+      }
+    }
+
+    for (let item of allPost) {
+      const authorName = item.querySelector(".entry-meta .meta-author a").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+
+      if (authorName.includes(keyword.toLowerCase().replace("-", " "))) {
+        item.setAttribute("filtered", false);
+      } else {
+        item.setAttribute("filtered", true);
+      }
+    }
+    let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
+    });
+    updatePagination(allPost, visiblePost)
+
+    $(".page-info").css({ display: "none" });
+    $(".category-result, .search-result, .not-found, .not-found-desc").remove();
   }
 })(jQuery);
