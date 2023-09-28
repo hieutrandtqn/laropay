@@ -1409,6 +1409,7 @@ a:hover {
     -o-transition: all 0.3s;
     transition: all 0.3s;
     color: #000000;
+    width: fit-content;
 }
 
 .cmn-btn:hover {
@@ -1422,7 +1423,6 @@ a:hover {
 @media (max-width: 1199px) {
     .cmn-btn {
         font-size: 18px;
-        width: fit-content;
     }
 }
 
@@ -2487,6 +2487,7 @@ span.is-active:after {
 .carousel-control-next {
     opacity: 0;
     display: none;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -2505,11 +2506,11 @@ span.is-active:after {
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #ffc310;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     background-origin: content-box;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 7px;
+    border-radius: 5px;
 }
 
 @media (max-width: 1199px) {
