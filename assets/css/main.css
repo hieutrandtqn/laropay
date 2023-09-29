@@ -139,6 +139,22 @@ a:hover {
     margin-bottom: -50px !important;
 }
 
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.pb-60 {
+    padding-bottom: 60px;
+}
+
 .pt-90 {
     padding-top: 90px;
 }
@@ -2504,7 +2520,8 @@ span.is-active:after {
     display: flex;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
     background-color: #ffc310;
     width: 34px;
     height: 34px;
@@ -2581,6 +2598,7 @@ span.is-active:after {
     .hero__content .image-cover .overlay {
         padding: 10px 20px;
         height: 600px;
+        display: block;
     }
 }
 
@@ -2910,6 +2928,7 @@ span.is-active:after {
 
 .single-game-hero .download-buttons {
     display: flex;
+    justify-content: center;
 }
 
 .single-game-hero .game-img {
@@ -4188,6 +4207,16 @@ img.emoji {
     padding: 0 !important;
 }
 
+@media (max-width: 991px) {
+    .about-thumb-wrapper {
+        width: fit-content;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 50px !important;
+    }
+}
+
 .about-thumb {
     position: relative;
 }
@@ -4983,6 +5012,17 @@ h4 {
 }
 
 /* table of content css */
+.table-of-content {
+    background-color: #65385B;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.table-of-content h3{
+    margin: 10px 0;
+}
+
 .blog-details__content nav[data-toggle='toc'] .nav .nav {
     display: block;
 }
@@ -5013,6 +5053,37 @@ nav[data-toggle=toc] .nav>li>a:hover {
 .blog-details__content .navbar-nav .nav-link {
     /* color: #ffff !important; */
     font-size: 18px !important;
+}
+
+.toc-collapse-btn {
+    margin-left: 20px;
+    height: 25px;
+    width: 40px;
+    padding: 0;
+    outline: none;
+    background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
+}
+
+.toc-collapse-btn i{
+    font-size: 20px;
+    line-height: 24px;
+    color: black;
+    transition: all 0.3s;
+}
+
+.toc-collapse-btn i:hover{
+    color: #fc43ff;
+}
+
+.toc-collapse-btn.collapsed i{
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.toc-collapse-btn {
+    margin-left: 20px;
+    background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
 }
 
 /* end table of content css */
