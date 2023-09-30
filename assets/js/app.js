@@ -414,33 +414,13 @@
   //Filter by tag
   $(".category-list .caption").on("click", function (event) {
     let keyword = $(this).text();
-    let allPost = Array.from(document.getElementsByClassName("post-card"));
-
-    for (let item of allPost) {
-      const category = item.querySelector(".post-card__category").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
-
-      if (category.includes(keyword.toLowerCase())) {
-        item.setAttribute("filtered", false);
-      } else {
-        item.setAttribute("filtered", true);
-      }
-    }
-    let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
-      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
-    });
-    updatePagination(allPost, visiblePost)
-
-    $(".page-info").css({ display: "none" });
-    $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
-    $(".page-result").append(`<p class="category-result">Category: ${keyword}</p>`);
+    window.location.href = "blog.html?category=" + keyword.replace(" ", "-").toLowerCase();
   })
 
   //On author clicked
   $(".post-author").on("click", function (event) {
     let keyword = $(".author .name").text();
-
     window.location.href = "blog.html?author=" + keyword.replace(" ", "-").toLowerCase();
-
   })
 
   function updatePagination(allPost, visiblePost) {
@@ -500,6 +480,29 @@
 
     $(".page-info").css({ display: "none" });
     $(".category-result, .search-result, .not-found, .not-found-desc").remove();
+  }
+
+  if (window.location.href.indexOf("?category=") !== -1) {
+    let keyword = window.location.href.slice(window.location.href.indexOf("?category=") + 10, window.location.href.length).replace("-", " ");
+    let allPost = Array.from(document.getElementsByClassName("post-card"));
+
+    for (let item of allPost) {
+      const category = item.querySelector(".post-card__category").textContent.replaceAll("\n", "").replace(/\s\s+/g, ' ').toLowerCase();
+
+      if (category.includes(keyword.toLowerCase())) {
+        item.setAttribute("filtered", false);
+      } else {
+        item.setAttribute("filtered", true);
+      }
+    }
+    let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
+      return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
+    });
+    updatePagination(allPost, visiblePost)
+
+    $(".page-info").css({ display: "none" });
+    $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
+    $(".page-result").append(`<p class="category-result">Category: ${keyword}</p>`);
   }
 
   let container1 = document.getElementById('Square');
