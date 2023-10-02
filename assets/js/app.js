@@ -328,9 +328,14 @@
   //Blog pagination
   if (document.querySelector('.pagination') !== null) {
     let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
-      return e.filtered === undefined || e.filtered !== false;
-    });
-    updatePagination(posts);
+        return e.filtered === undefined || e.filtered !== false;
+      });
+    if (window.location.href.indexOf("?page=") === -1) {
+      updatePagination(posts);
+    } else {
+      let page = window.location.href.slice(window.location.href.indexOf("?page=") + 6, window.location.href.length);
+      updatePagination(posts, null, parseInt(page));
+    }
   }
 
 
@@ -423,33 +428,6 @@
     window.location.href = "blog.html?author=" + keyword.replace(" ", "-").toLowerCase();
   })
 
-  function updatePagination(allPost, visiblePost) {
-    $('.pagination').pagination({
-      dataSource: Array.from(visiblePost || allPost),
-      pageSize: 3,
-      callback: function (data, pagination) {
-        for (let item of allPost) {
-          item.style.display = "none";
-        }
-        for (let item of data) {
-          item.style.display = "block";
-        }
-        if (data.length > 0) {
-          $('.pagination').css({ display: "block" });
-
-        } else {
-          $('.pagination').css({ display: "none" });
-        }
-        if (data.length > 1) {
-          $('.pagination').css({ display: "flex" });
-        } else {
-          $('.pagination').css({ display: "none" });
-        }
-        $("html, body").animate({ scrollTop: 0 }, 200);
-      }
-    })
-  }
-
   if (window.location.href.indexOf("?author=") !== -1) {
     let allPost = Array.from(document.getElementsByClassName("post-card"));
     let allAuthor = Array.from(document.getElementsByClassName("author-result"));
@@ -476,7 +454,7 @@
     let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
-    updatePagination(allPost, visiblePost)
+    updatePagination(allPost, visiblePost);
 
     $(".page-info").css({ display: "none" });
     $(".category-result, .search-result, .not-found, .not-found-desc").remove();
@@ -505,17 +483,54 @@
     $(".page-result").append(`<p class="category-result">Category: ${keyword}</p>`);
   }
 
-  let container1 = document.getElementById('Square');
-    window.onmousemove = function (e) {
-        let x = -e.x / 90,
-            y = -e.y / 90;
+  // if (window.location.href.indexOf("?page=") !== -1) {
+  //   let page = window.location.href.slice(window.location.href.indexOf("?page=") + 6, window.location.href.length);
+  //   $('.pagination').pagination('go', parseInt(page));
+  // }
 
-        container1.style.right = x + 'px';
-        container1.style.bottom = y + 'px';
+  function updatePagination(allPost, visiblePost, currentPage) {
+    $('.pagination').pagination({
+      dataSource: Array.from(visiblePost || allPost),
+      pageSize: 3,
+      pageNumber: currentPage || 1,
+      callback: function (data, pagination) {
+        for (let item of allPost) {
+          item.style.display = "none";
+        }
+        for (let item of data) {
+          item.style.display = "block";
+        }
+        if (data.length > 0) {
+          $('.pagination').css({ display: "block" });
+          window.history.replaceState({}, null, "blog.html?page=" + pagination.pageNumber);
+        } else {
+          $('.pagination').css({ display: "none" });
+        }
+        if (data.length > 1) {
+          $('.pagination').css({ display: "flex" });
+        } else {
+          $('.pagination').css({ display: "none" });
+        }
+        $("html, body").animate({ scrollTop: 0 }, 200);
+      }
+    })
+  }
+
+  //404 page
+  if (document.querySelector('#Square') !== null) {
+    let container1 = document.getElementById('Square');
+    window.onmousemove = function (e) {
+      let x = -e.x / 90,
+        y = -e.y / 90;
+
+      container1.style.right = x + 'px';
+      container1.style.bottom = y + 'px';
     }
     /* Mobile gyroscope */
     window.addEventListener("deviceorientation", function (e) {
-        container1.style.right = e.gamma/3 + "px"
-        container1.style.bottom = e.beta/3 + "px"
+      container1.style.right = e.gamma / 3 + "px"
+      container1.style.bottom = e.beta / 3 + "px"
     })
+  }
+
 })(jQuery);
