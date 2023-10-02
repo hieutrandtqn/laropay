@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Disallow: /assets/
+Sitemap: sitemap_index.xml

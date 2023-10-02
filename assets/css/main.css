@@ -4978,6 +4978,8 @@ h4 {
 
 .blog-details__content p span {
     font-size: 18px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .blog-details__content p a {
@@ -5313,6 +5315,12 @@ nav[data-toggle=toc] .nav>li>a:hover {
 .comment-form p {
     width: 100%;
     padding: 0 15px;
+}
+
+.comment-form input[type=text],
+.comment-form input[type=email], .comment-form textarea {
+    color: #350b2d;
+    padding: 0 10px;
 }
 
 .comment-form input[type=text],
