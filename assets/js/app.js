@@ -330,10 +330,10 @@
     let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.filtered === undefined || e.filtered !== false;
     });
-    if (window.location.href.indexOf("?page=") === -1) {
+    if (window.location.href.indexOf("page=") === -1) {
       updatePagination(posts);
     } else {
-      let page = window.location.href.slice(window.location.href.indexOf("?page=") + 6, window.location.href.length);
+      let page = window.location.href.slice(window.location.href.indexOf("page=") + 5, window.location.href.length);
       updatePagination(posts, null, parseInt(page));
     }
   }
@@ -405,6 +405,7 @@
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
     updatePagination(allPost, visiblePost);
+    window.history.replaceState({}, null, "?page=1");
 
     $(".page-info").css({ display: "none" });
     $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
@@ -454,7 +455,8 @@
     let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
-    updatePagination(allPost, visiblePost);
+    let page = window.location.href.slice(window.location.href.indexOf("page=") + 5, window.location.href.length);
+    updatePagination(allPost, visiblePost, page);
 
     $(".page-info").css({ display: "none" });
     $(".category-result, .search-result, .not-found, .not-found-desc").remove();
@@ -476,7 +478,8 @@
     let visiblePost = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
       return e.attributes.filtered.value === undefined || e.attributes.filtered.value === 'false';
     });
-    updatePagination(allPost, visiblePost)
+    let page = window.location.href.slice(window.location.href.indexOf("page=") + 5, window.location.href.length);
+    updatePagination(allPost, visiblePost, page)
 
     $(".page-info").css({ display: "none" });
     $(".category-result, .search-result, .author-result, .not-found, .not-found-desc").remove();
@@ -501,18 +504,13 @@
           item.style.display = "block";
         }
         if (data.length > 0) {
-          $('.pagination').css({ display: "block" });
+          $('.pagination').css({ display: "flex" });
           let param = undefined;
           if (window.location.href.includes("?")) {
             param = window.location.href.slice(window.location.href.indexOf("?"));
             param = param.replace(/\?page=\d+/g, '').replace(/\&page=\d+/g, '');
           }
           window.history.replaceState({}, null, (param ? param + "&page=" : "?page=") + pagination.pageNumber);
-        } else {
-          $('.pagination').css({ display: "none" });
-        }
-        if (data.length > 1) {
-          $('.pagination').css({ display: "flex" });
         } else {
           $('.pagination').css({ display: "none" });
         }
