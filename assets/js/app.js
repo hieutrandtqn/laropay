@@ -328,8 +328,8 @@
   //Blog pagination
   if (document.querySelector('.pagination') !== null) {
     let posts = Array.from(document.getElementsByClassName("post-card")).filter(function (e) {
-        return e.filtered === undefined || e.filtered !== false;
-      });
+      return e.filtered === undefined || e.filtered !== false;
+    });
     if (window.location.href.indexOf("?page=") === -1) {
       updatePagination(posts);
     } else {
@@ -428,10 +428,10 @@
     window.location.href = "blog.html?author=" + keyword.replace(" ", "-").toLowerCase();
   })
 
-  if (window.location.href.indexOf("?author=") !== -1) {
+  if (window.location.href.indexOf("author=") !== -1) {
     let allPost = Array.from(document.getElementsByClassName("post-card"));
     let allAuthor = Array.from(document.getElementsByClassName("author-result"));
-    let keyword = window.location.href.slice(window.location.href.indexOf("?author=") + 8, window.location.href.length);
+    let keyword = window.location.href.slice(window.location.href.indexOf("author=") + 7, window.location.href.indexOf("&") === -1 ? window.location.href.length : window.location.href.indexOf("&"));
 
     for (let item of allAuthor) {
       const result = item.querySelector("." + keyword);
@@ -460,8 +460,8 @@
     $(".category-result, .search-result, .not-found, .not-found-desc").remove();
   }
 
-  if (window.location.href.indexOf("?category=") !== -1) {
-    let keyword = window.location.href.slice(window.location.href.indexOf("?category=") + 10, window.location.href.length).replace("-", " ");
+  if (window.location.href.indexOf("category=") !== -1) {
+    let keyword = window.location.href.slice(window.location.href.indexOf("category=") + 9, window.location.href.indexOf("&") === -1 ? window.location.href.length : window.location.href.indexOf("&")).replace("-", " ");
     let allPost = Array.from(document.getElementsByClassName("post-card"));
 
     for (let item of allPost) {
@@ -502,7 +502,12 @@
         }
         if (data.length > 0) {
           $('.pagination').css({ display: "block" });
-          window.history.replaceState({}, null, "blog.html?page=" + pagination.pageNumber);
+          let param = undefined;
+          if (window.location.href.includes("?")) {
+            param = window.location.href.slice(window.location.href.indexOf("?"));
+            param = param.replace(/\?page=\d+/g, '').replace(/\&page=\d+/g, '');
+          }
+          window.history.replaceState({}, null, (param ? param + "&page=" : "?page=") + pagination.pageNumber);
         } else {
           $('.pagination').css({ display: "none" });
         }
