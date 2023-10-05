@@ -4577,7 +4577,9 @@ img.emoji {
 }
 
 .post-card__thumb {
-    max-height: 185px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 17/8;
     overflow: hidden;
     border-radius: 10px;
     -webkit-border-radius: 10px;
