@@ -231,6 +231,49 @@ a:hover {
     margin-top: 100px;
 }
 
+.notice-board {
+    margin-top: 150px;
+    height: 40px;
+    background: #a31212;
+    border: 8px solid #c67839;
+    border-radius: 10px;
+    border-image: url(/assets/images/bg/border.png) 27 round;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+@media (max-width: 1199px) {
+    .notice-board {
+        margin-top: 80px;
+    }
+}
+
+.notice-board p{
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 16px;
+    height: 10px;
+    color: #ffffff;
+    white-space: nowrap;
+    animation: slide 16s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .bg_img {
     background-size: cover;
     background-position: center;
@@ -2441,8 +2484,8 @@ span.is-active:after {
 /* header end */
 /* hero section css start */
 .hero {
-    /* padding-top: 158px;
-    padding-bottom: 200px; */
+    padding-top: 20px;
+    padding-bottom: 50px;
     display: flex;
     align-items: center;
     position: relative;
@@ -2450,7 +2493,7 @@ span.is-active:after {
 }
 
 .hero {
-    padding-top: 100px;
+    padding-top: 20px;
     padding-bottom: 50px;
     overflow: hidden;
 }
@@ -2545,7 +2588,7 @@ span.is-active:after {
     position: relative;
     height: 400px;
     margin: 0;
-    margin-top: 55px;
+    margin-top: 10px;
 }
 
 .carousel-control-prev,
@@ -2554,8 +2597,6 @@ span.is-active:after {
     display: none;
     transition: all 0.3s ease-in-out;
 }
-
-
 
 .hero__content .carousel:hover .carousel-control-prev,
 .hero__content .carousel:hover .carousel-control-next {
@@ -4579,7 +4620,6 @@ img.emoji {
 .post-card__thumb {
     width: 100%;
     height: auto;
-    aspect-ratio: 17/8;
     overflow: hidden;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -4801,6 +4841,9 @@ img.emoji {
     z-index: 1;
 }
 
+.blog-slider .slick-arrow {
+}
+
 .blog-slider .slick-arrow.prev {
     left: -20px;
 }
@@ -4827,6 +4870,10 @@ img.emoji {
 
 .blog-slider .post-card {
     margin: 15px;
+}
+
+.blog-slider .post-card__thumb {
+    aspect-ratio: 17/8;
 }
 
 .search-result,
