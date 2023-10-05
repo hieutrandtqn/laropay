@@ -237,7 +237,7 @@ a:hover {
     background: #a31212;
     border: 8px solid #c67839;
     border-radius: 10px;
-    border-image: url(/assets/images/bg/border.png) 27 round;
+    border-image: url(../../assets/images/bg/border.png) 27 round;
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
