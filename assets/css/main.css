@@ -239,10 +239,10 @@ a:hover {
     border-width: 8px;
     border-radius: 10px;
     border-color: transparent;
-    border-image: url(../../assets/images/bg/border.png) 27 round;
-    -o-border-image: url(../../assets/images/bg/border.png) 27 round;
-    -webkit-border-image: url(../../assets/images/bg/border.png) 27 round;
-    -moz-border-image: url(../../assets/images/bg/border.png) 27 round;
+    border-image: url(../../assets/images/bg/border.png) 27 27 27 27 round round;
+    -o-border-image: url(../../assets/images/bg/border.png) 27 27 27 27 round round;
+    -webkit-border-image: url(../../assets/images/bg/border.png) 27 27 27 27 round round;
+    -moz-border-image: url(../../assets/images/bg/border.png) 27 27 27 27 round round;
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
