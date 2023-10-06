@@ -235,12 +235,21 @@ a:hover {
     margin-top: 150px;
     height: 40px;
     background: #a31212;
-    border: 8px solid #c67839;
+    border-style: solid;
+    border-width: 8px;
     border-radius: 10px;
+    border-color: transparent;
     border-image: url(../../assets/images/bg/border.png) 27 round;
+    -o-border-image: url(../../assets/images/bg/border.png) 27 round;
+    -webkit-border-image: url(../../assets/images/bg/border.png) 27 round;
+    -moz-border-image: url(../../assets/images/bg/border.png) 27 round;
     overflow: hidden;
     white-space: nowrap;
     overflow: hidden;
+
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 
