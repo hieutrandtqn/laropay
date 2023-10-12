@@ -2520,6 +2520,15 @@ span.is-active:after {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: 700;
+    
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.carousel-item.active .hero__sub-title {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 @media (max-width: 767px) {
@@ -2541,6 +2550,16 @@ span.is-active:after {
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: .05em;
+    
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.1s;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.carousel-item.active .hero__title {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 @media (max-width: 767px) {
@@ -2563,6 +2582,16 @@ span.is-active:after {
 .hero__content .hero__desc {
     font-size: 18px;
     color: #ffffff;
+    
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.carousel-item.active .hero__desc {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 @media (max-width: 1199px) {
@@ -2579,6 +2608,16 @@ span.is-active:after {
 
 .hero__content .cmn-btn {
     margin-top: 20px;
+
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.3s;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.carousel-item.active .cmn-btn {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 @media (max-width: 480px) {
@@ -2587,7 +2626,6 @@ span.is-active:after {
         margin-top: 10px;
     }
 }
-
 
 .hero__content .carousel {
     position: relative;
