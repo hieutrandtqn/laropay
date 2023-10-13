@@ -2758,6 +2758,15 @@ span.is-active:after {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background-position: -100cm 0;
+    background-repeat: no-repeat;
+    transition: all 0.6s;
+}
+
+.carousel-item.active .image-cover .overlay {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0));
+    background-position: 0 0;
 }
 
 .hero__animation {
@@ -2790,6 +2799,12 @@ span.is-active:after {
         padding: 10px 20px;
         height: 600px;
         display: block;
+        background-position: 0 -100cm;
+    }
+
+    .carousel-item.active .image-cover .overlay {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0));
+        background-position: 0 0;
     }
 }
 
