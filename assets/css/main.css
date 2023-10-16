@@ -46,6 +46,9 @@
 /* reset css start */
 @import url("css2.css");
 
+/* import animation */
+@import url("animation.css");
+
 html {
     scroll-behavior: smooth;
 }
@@ -2663,6 +2666,9 @@ span.is-active:after {
               linear-gradient(to bottom, #da9c1f, #a31212) border-box;
     border: 1px solid transparent;
     border-radius: 8px;
+    
+    -webkit-animation: 0.6s fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: 0.6s fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .carousel-item.active .cmn-btn {
@@ -2769,13 +2775,32 @@ span.is-active:after {
     background-position: 0 0;
 }
 
-.hero__animation {
-    width: 60vh;
-    height: 45vh;
+.hero__content .hero__animation {
+    width: auto;
+    height: 100%;
     position: absolute;
     right: 0px;
     bottom: 0px;
     z-index: 0;
+}
+
+.hero__content .animation {
+    width: 60vh;
+    height: auto;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+    -webkit-animation: vibrate-3 1.5s linear infinite both;
+	        animation: vibrate-3 1.5s linear infinite both;
+}
+
+.hero__content .animation .banner-girl {
+    width: 100%;
+    height: 100%;
+
+    -webkit-animation: slide-in-elliptic-right-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-right-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @media (max-width: 991px) {
@@ -2805,6 +2830,24 @@ span.is-active:after {
     .carousel-item.active .image-cover .overlay {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0));
         background-position: 0 0;
+    }
+
+    .hero__animation {
+        width: 100vw;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        z-index: 0;
+    }
+    
+    .hero__content .animation {
+        max-width: 60vh;
+        width: 100vw !important;
+        height: auto !important;
+        position: absolute;
+        right: -80px;
+        bottom: 0px;
     }
 }
 
@@ -3159,7 +3202,6 @@ span.is-active:after {
 .page-list li a {
     color: #ffffff;
 }
-
 /* inner-hero css end */
 /* about us section css start */
 .video-btn {
