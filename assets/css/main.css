@@ -2800,6 +2800,8 @@ span.is-active:after {
     height: 100%;
     -webkit-animation: 1s slide-in-elliptic-right-bck 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: 1s slide-in-elliptic-right-bck 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    
 }
 
 
@@ -2847,7 +2849,7 @@ span.is-active:after {
         width: 100vw !important;
         height: auto !important;
         position: absolute;
-        right: -80px;
+        right: -50px;
         bottom: 0px;
     }
 }
