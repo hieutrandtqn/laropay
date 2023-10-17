@@ -262,7 +262,7 @@ a:hover {
     }
 }
 
-.notice-board p{
+.notice-board p {
     display: inline-block;
     padding-left: 100%;
     font-size: 16px;
@@ -276,7 +276,7 @@ a:hover {
     0% {
         transform: translateX(0%);
     }
-    
+
     100% {
         transform: translateX(-100%);
     }
@@ -2492,12 +2492,12 @@ span.is-active:after {
 /* header end */
 /* hero section css start */
 .gold-effect {
-    background: linear-gradient(to bottom, #ffffff 12%,#fff2d7 24%, #ffe9b9 26%, #fffaed 37%,#ffaa00 40%,#ffd967 78%);
+    background: linear-gradient(to bottom, #ffffff 12%, #fff2d7 24%, #ffe9b9 26%, #fffaed 37%, #ffaa00 40%, #ffd967 78%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #fffa77;
     position: relative;
-	text-transform: uppercase;	
+    text-transform: uppercase;
     display: block;
 }
 
@@ -2505,13 +2505,13 @@ span.is-active:after {
     background: none;
     content: attr(data-heading);
     left: 0;
-	top: 0;
+    top: 0;
     z-index: -1;
     position: absolute;
-    text-shadow: 
-		-1px 0 1px #c6bb9f, 
-		0 1px 1px #c6bb9f, 
-		0px 0px 10px #7b5200;
+    text-shadow:
+        -1px 0 1px #c6bb9f,
+        0 1px 1px #c6bb9f,
+        0px 0px 10px #7b5200;
 }
 
 .hero {
@@ -2542,7 +2542,7 @@ span.is-active:after {
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: .05em;
-    
+
     transition: all 0.3s ease-in-out;
     transition-delay: 0.1s;
     opacity: 0;
@@ -2567,6 +2567,7 @@ span.is-active:after {
     min-width: 10px !important;
     transform: translateY(-5px);
 }
+
 .carousel-item.active .hero__title {
     opacity: 1;
     transform: translateX(0px);
@@ -2576,6 +2577,7 @@ span.is-active:after {
     .hero__title {
         font-size: 14px;
     }
+
     .hero__title .gold-effect {
         font-size: 3rem;
     }
@@ -2585,7 +2587,8 @@ span.is-active:after {
     .hero__title {
         font-size: 1rem;
     }
-    .hero__title .gold-effect{
+
+    .hero__title .gold-effect {
         font-size: 2rem;
     }
 }
@@ -2597,7 +2600,7 @@ span.is-active:after {
     text-transform: uppercase;
     margin-bottom: 10px;
     font-weight: 700;
-    
+
     transition: all 0.3s ease-in-out;
     opacity: 0;
     transform: translateX(50px);
@@ -2630,7 +2633,7 @@ span.is-active:after {
     font-size: 18px;
     color: #ffffff;
     text-shadow: 0 0 10px #a31212;
-    
+
     transition: all 0.3s ease-in-out;
     transition-delay: 0.2s;
     opacity: 0;
@@ -2662,13 +2665,13 @@ span.is-active:after {
     opacity: 0;
     transform: translateX(50px);
 
-    background: linear-gradient(to bottom, #ffffff 12%,#fff8ea 24%, #fff5de 26%, #ffe9b5 37%,#da9c1f 50%, #ffc34b 80%,#ffd760 95%) padding-box,
-              linear-gradient(to bottom, #da9c1f, #a31212) border-box;
+    background: linear-gradient(to bottom, #ffffff 12%, #fff8ea 24%, #fff5de 26%, #ffe9b5 37%, #da9c1f 50%, #ffc34b 80%, #ffd760 95%) padding-box,
+        linear-gradient(to bottom, #da9c1f, #a31212) border-box;
     border: 1px solid transparent;
     border-radius: 8px;
-    
+
     -webkit-animation: 0.6s fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: 0.6s fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: 0.6s fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .carousel-item.active .cmn-btn {
@@ -2785,14 +2788,14 @@ span.is-active:after {
 }
 
 .hero__content .animation {
-    width: 60vh;
+    width: 65vh;
     height: auto;
     position: absolute;
     right: 0px;
     bottom: 0px;
 
     -webkit-animation: vibrate-3 1.5s linear infinite both;
-	        animation: vibrate-3 1.5s linear infinite both;
+    animation: vibrate-3 1.5s linear infinite both;
 }
 
 .hero__content .animation .banner-girl {
@@ -2800,8 +2803,6 @@ span.is-active:after {
     height: 100%;
     -webkit-animation: 1s slide-in-elliptic-right-bck 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: 1s slide-in-elliptic-right-bck 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-    
 }
 
 
@@ -2846,10 +2847,10 @@ span.is-active:after {
 
     .hero__content .animation {
         max-width: 50vh;
-        width: 100vw !important;
+        width: 90vw !important;
         height: auto !important;
         position: absolute;
-        right: -50px;
+        right: 0px;
         bottom: 0px;
     }
 }
@@ -3205,6 +3206,7 @@ span.is-active:after {
 .page-list li a {
     color: #ffffff;
 }
+
 /* inner-hero css end */
 /* about us section css start */
 .video-btn {
@@ -3475,6 +3477,36 @@ span.is-active:after {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     overflow: hidden;
+    position: relative;
+}
+
+.game-card__thumb::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, .3);
+    height: 100%;
+    width: 60px;
+    left: -80px;
+    transform: skewX(-30deg);
+    animation: slide 8s infinite;
+}
+
+@keyframes slide {
+    0% {
+        left: -100%;
+    }
+
+    10% {
+        left: 120%;
+    }
+
+    20% {
+        left: -100%;
+    }
+
+    100% {
+        left: -100%;
+    }
 }
 
 .game-card__thumb img {
@@ -3483,7 +3515,7 @@ span.is-active:after {
 
 .game-card__content {
     padding: 20px;
-    background-color: #ffc310;
+    background-color: #fdbe00;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -3496,9 +3528,20 @@ span.is-active:after {
     justify-content: space-between;
     margin: -50px 15px 0 15px;
     position: relative;
+    overflow: hidden;
 }
 
 
+.glossy-effect {
+    content: '';
+    width: 100%;
+    height: 50%;
+    border-radius: 10px 10px 50px 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 @media (min-width: 991px) {
     .game-card__content {
@@ -3514,6 +3557,7 @@ span.is-active:after {
 
 .game-card__details {
     width: 65%;
+    z-index: 1;
 }
 
 @media (max-width: 575px) {
@@ -3607,6 +3651,7 @@ span.is-active:after {
 .game-card__action {
     max-width: 30%;
     text-align: center;
+    z-index: 1;
 }
 
 .game-card__action .download-buttons {
@@ -4999,8 +5044,7 @@ img.emoji {
     z-index: 1;
 }
 
-.blog-slider .slick-arrow {
-}
+.blog-slider .slick-arrow {}
 
 .blog-slider .slick-arrow.prev {
     left: -20px;
@@ -5245,7 +5289,7 @@ h4 {
     border-radius: 10px;
 }
 
-.table-of-content h3{
+.table-of-content h3 {
     margin: 10px 0;
 }
 
@@ -5290,18 +5334,18 @@ nav[data-toggle=toc] .nav>li>a:hover {
     background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
 }
 
-.toc-collapse-btn i{
+.toc-collapse-btn i {
     font-size: 20px;
     line-height: 24px;
     color: black;
     transition: all 0.3s;
 }
 
-.toc-collapse-btn i:hover{
+.toc-collapse-btn i:hover {
     color: #fc43ff;
 }
 
-.toc-collapse-btn.collapsed i{
+.toc-collapse-btn.collapsed i {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -5544,7 +5588,8 @@ nav[data-toggle=toc] .nav>li>a:hover {
 }
 
 .comment-form input[type=text],
-.comment-form input[type=email], .comment-form textarea {
+.comment-form input[type=email],
+.comment-form textarea {
     color: #350b2d;
     padding: 0 10px;
 }
@@ -6278,6 +6323,7 @@ fffa77 .widget__search button i {
 .page-404-wrapper .texts .cmn-btn {
     margin-top: 20px;
 }
+
 a {
     text-decoration: none;
 }
@@ -6309,10 +6355,10 @@ a {
     border-radius: 1.2rem;
     background: #fffa77;
     box-shadow: #F3B855 0 0 5px 30px,
-    #D77D4E 0 0 10px 60px,
-    #AA4C4B 0 0 15px 90px,
-    #65385B 0 0 20px 120px,
-    #350B2D 0 0 25px 150px;
+        #D77D4E 0 0 10px 60px,
+        #AA4C4B 0 0 15px 90px,
+        #65385B 0 0 20px 120px,
+        #350B2D 0 0 25px 150px;
     transform: rotateZ(-21deg);
     display: flex;
     justify-content: center;
@@ -6344,14 +6390,17 @@ a {
         flex-direction: column;
         justify-content: space-evenly;
     }
-    .Square404{
+
+    .Square404 {
         width: 100%;
     }
-    .Square{
+
+    .Square {
         width: 150px;
         height: 150px;
     }
-    .Square h1{
+
+    .Square h1 {
         font-size: 70px;
     }
 }
