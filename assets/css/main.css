@@ -2357,7 +2357,7 @@ textarea:focus,
     background-image: -moz-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
     background-image: -webkit-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
     background-image: -ms-linear-gradient(89deg, #ff9c19 0%, #ffdd2d 100%);
-    
+
     box-shadow: 0px 12px 29px 0px rgba(26, 15, 63, 0.71);
     z-index: -1;
     /* clip-path: polygon(6% 0, 100% 0%, 94% 100%, 0% 100%); */
@@ -2696,10 +2696,13 @@ span.is-active:after {
     transition: all 0.3s ease-in-out;
 }
 
-.hero__content .carousel:hover .carousel-control-prev,
-.hero__content .carousel:hover .carousel-control-next {
-    opacity: 0.5;
-    display: flex;
+@media (min-width: 767px) {
+    .hero__content .carousel:hover .carousel-control-prev,
+    .hero__content .carousel:hover .carousel-control-next {
+        opacity: 0.5;
+        display: flex;
+    }
+
 }
 
 .carousel-control-prev:hover,
@@ -3466,7 +3469,7 @@ span.is-active:after {
 
 .game-card__thumb {
     border: 7px solid transparent;
-    background: linear-gradient(180deg, #e1bc01 0%,#ffecc5 50%,#672711 51%,#ffba30 65%) border-box;
+    background: linear-gradient(180deg, #e1bc01 0%, #ffecc5 50%, #672711 51%, #ffba30 65%) border-box;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -3487,7 +3490,8 @@ span.is-active:after {
     animation: slide 5s infinite;
 }
 
-.game-card__thumb img, .game-card__thumb video {
+.game-card__thumb img,
+.game-card__thumb video {
     width: 100%;
 }
 
