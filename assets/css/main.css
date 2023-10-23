@@ -3961,11 +3961,6 @@ span.is-active:after {
     margin-bottom: 10px;
 }
 
-.featured-game-thumb .feature_bg {
-    width: 300%;
-    height: 300%;
-}
-
 /* game features section css end */
 /* single game css start */
 .single-game-slider .slick-list {

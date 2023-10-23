@@ -251,8 +251,7 @@
       speed: 700,
       fade: true,
       arrows: false,
-      dots: false,
-      pauseOnFocus: false
+      dots: false
     });
 
     function bannerCarousel() {
@@ -270,39 +269,6 @@
       
     }
     bannerCarousel();
-
-    // const title = ".carousel-item.active .hero__title";
-    // const sub_title = ".carousel-item.active .hero__sub-title";
-    // const description = ".carousel-item.active .hero__desc";
-    // const button = ".carousel-item.active .cmn-btn";
-
-    // gsap.fromTo(title, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x:0, ease: "slow(0.7,0.7,false)"});
-    // gsap.to(title, { duration: 0, opacity: 0, delay: 5 });
-
-    // gsap.fromTo(sub_title, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x: 0, delay: 1, ease: "slow(0.7,0.7,false)"});
-    // gsap.to(sub_title, { duration: 0, opacity: 0, delay: 5 });
-
-    // gsap.fromTo(description, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x:0, ease: "slow(0.7,0.7,false)"});
-    // gsap.to(description, { duration: 0, opacity: 0, delay: 5 });
-
-    // gsap.fromTo(button, {opacity: 0}, { duration: 0.5, opacity: 1, ease: "none"});
-    // gsap.to(button, { duration: 0, opacity: 0, delay: 5 });
-
-    
-
-    // $('#carouselBannerIndicators').on('slid.bs.carousel', function (event) {
-    //   gsap.fromTo(title, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x:0, ease: "slow(0.7,0.7,false)"});
-    //   gsap.to(title, { duration: 0, opacity: 0, delay: 5 });
-  
-    //   gsap.fromTo(sub_title, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x:0, ease: "slow(0.7,0.7,false)"});
-    //   gsap.to(sub_title, { duration: 0, opacity: 0, delay: 5 });
-  
-    //   gsap.fromTo(description, {x:100, opacity: 0}, { duration: 0.5, opacity: 1, x:0, ease: "slow(0.7,0.7,false)"});
-    //   gsap.to(description, { duration: 0, opacity: 0, delay: 5 });
-  
-    //   gsap.fromTo(button, {opacity: 0}, { duration: 1, opacity: 1, ease: "none"});
-    //   gsap.to(button, { duration: 0, opacity: 0, delay: 5 });
-    // })
 
     //Scrollspy offset
     $('.nav-link').click(function (event) {
