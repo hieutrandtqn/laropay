@@ -243,6 +243,18 @@
       ]
     });
 
+    $('.mga-laro-slider').slick({
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 700,
+      fade: true,
+      arrows: false,
+      dots: false,
+      pauseOnFocus: false
+    });
+
     function bannerCarousel() {
       
       //banner carousel
