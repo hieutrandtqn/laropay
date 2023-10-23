@@ -3090,10 +3090,21 @@ span.is-active:after {
     width: 100%;
     height: 100%;
     -webkit-clip-path: ellipse(90% 75% at 50% 75%);
-    clip-path: ellipse(53% 75% at 50% 75%);
+    clip-path: ellipse(90% 75% at 50% 75%);
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+
+.inner-hero.style--three .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask: radial-gradient(#000 10%, #0000 90%);
+          mask: radial-gradient(#000 10%, #0000 90%);
+    /* transform: scale(1); */
 }
 
 @media (max-width: 575px) {
@@ -3110,7 +3121,7 @@ span.is-active:after {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.65;
+    opacity: 0.3;
     z-index: 1;
     background: #bdc3c7;
     background: -webkit-linear-gradient(to top, #000033, rgba(0, 0, 0, 0.05));
@@ -3129,20 +3140,28 @@ span.is-active:after {
     transform: rotate(-180deg);
 }
 
+
+.single-game-hero .game-img {
+    border-radius: 20%;
+    margin-bottom: 15px;
+    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 .single-game-hero .game-name {
     font-size: 80px;
     text-transform: uppercase;
     text-shadow: 0px 16px 9px rgba(29, 28, 33, 0.34);
     margin-bottom: 15px;
+    -webkit-animation: 0.7 puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: 0.7s puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .single-game-hero .download-buttons {
     display: flex;
     justify-content: center;
-}
-
-.single-game-hero .game-img {
-    border-radius: 20%;
+    -webkit-animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 @media (max-width: 1199px) {
