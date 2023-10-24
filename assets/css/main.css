@@ -1173,7 +1173,7 @@ blockquote p {
     bottom: 5%;
     right: 2%;
     display: none;
-    z-index: 99999;
+    z-index: 99;
     cursor: pointer;
     text-align: center;
     border-radius: 50%;
@@ -2336,6 +2336,7 @@ textarea:focus,
 
 .navbar {
     position: relative;
+    overflow: hidden;
     z-index: 1;
     padding: 0 70px;
     filter: drop-shadow(5px 10px 10px rgba(26, 15, 63, 0.71));
@@ -2410,10 +2411,57 @@ textarea:focus,
     border-bottom: 2px solid;
     color: #000000;
     font-size: 0;
-    -webkit-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.55s ease-in-out;
+    -o-transition: all 0.55s ease-in-out;
+    transition: all 0.55s ease-in-out;
     cursor: pointer;
+}
+
+.menu {
+    cursor: pointer;
+    padding-left: 1.25em;
+    position: relative;
+    width: 35px;
+    height: 20px;
+}
+
+.menu-global {
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    border-top: 2.5px solid #a31212;
+    width: 100%;
+    transition: 0.55s;
+}
+
+.menu-top {
+    top: 0;
+}
+
+.menu-middle {
+    top: 10px;
+}
+
+.menu-bottom {
+    top: 20px;
+}
+
+.menu-top-click {
+    backface-visibility: hidden;
+    top: 15px;
+    transform: rotate(45deg);
+    transition: 0.55s 0s;
+}
+
+.menu-middle-click {
+    opacity: 0;
+}
+
+.menu-bottom-click {
+    backface-visibility: hidden;
+    top: 15px;
+    transform: rotate(-405deg);
+    transition: 0.55s 0s;
 }
 
 @media (max-width: 1199px) {
@@ -2697,6 +2745,7 @@ span.is-active:after {
 }
 
 @media (min-width: 767px) {
+
     .hero__content .carousel:hover .carousel-control-prev,
     .hero__content .carousel:hover .carousel-control-next {
         opacity: 0.5;
@@ -3103,7 +3152,7 @@ span.is-active:after {
     width: 100%;
     height: 100%;
     -webkit-mask: radial-gradient(#000 10%, #0000 90%);
-          mask: radial-gradient(#000 10%, #0000 90%);
+    mask: radial-gradient(#000 10%, #0000 90%);
     /* transform: scale(1); */
 }
 
@@ -3144,8 +3193,23 @@ span.is-active:after {
 .single-game-hero .game-img {
     border-radius: 20%;
     margin-bottom: 15px;
-    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    width: 25%;
+    -webkit-animation: 0.7s  slide-in-elliptic-top-fwd 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: 0.7s slide-in-elliptic-top-fwd 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@media (max-width: 1199px) {
+    .single-game-hero .game-img {
+        width: 30%;
+        border-radius: 20%;
+    }
+}
+
+@media (max-width: 575px) {
+    .single-game-hero .game-img {
+        width: 50%;
+        border-radius: 20%;
+    }
 }
 
 .single-game-hero .game-name {
@@ -3153,15 +3217,15 @@ span.is-active:after {
     text-transform: uppercase;
     text-shadow: 0px 16px 9px rgba(29, 28, 33, 0.34);
     margin-bottom: 15px;
-    -webkit-animation: 0.7 puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: 0.7s puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    -webkit-animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 .single-game-hero .download-buttons {
     display: flex;
     justify-content: center;
-    -webkit-animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-	        animation: 0.6s slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    -webkit-animation: 0.6s slide-in-blurred-top 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: 0.6s slide-in-blurred-top 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 @media (max-width: 1199px) {
@@ -3179,20 +3243,6 @@ span.is-active:after {
 @media (max-width: 575px) {
     .single-game-hero .game-name {
         font-size: 36px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .single-game-hero .game-img {
-        width: 35%;
-        border-radius: 20%;
-    }
-}
-
-@media (max-width: 575px) {
-    .single-game-hero .game-img {
-        width: 50%;
-        border-radius: 20%;
     }
 }
 
@@ -3482,7 +3532,7 @@ span.is-active:after {
 }
 
 .game-el-4 {
-    bottom: 0;
+    bottom: 100px;
     right: 0;
 }
 
@@ -3516,7 +3566,7 @@ span.is-active:after {
 
 .game-card__content {
     padding: 20px;
-    background-color: #fdbe00;
+    background: #fdbe00;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -3532,19 +3582,38 @@ span.is-active:after {
     overflow: hidden;
 }
 
+.game-card__content::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    background: radial-gradient(ellipse at center, #ffd65c 10%, transparent 40%);
+}
+
+.game-card__content::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -60%;
+    left: 0%;
+    background: radial-gradient(ellipse at center, #fff6da 0%, transparent 70%);
+}
 
 .glossy-effect {
     content: '';
-    width: 100%;
-    height: 50%;
-    border-radius: 10px 10px 50px 50px;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
-    background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
-    background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
-    background: -ms-linear-gradient(270deg, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
+    width: 200%;
+    height: 100%;
+    border-radius: 100%;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background: -moz-linear-gradient(270deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background: -webkit-linear-gradient(270deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background: -ms-linear-gradient(270deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 100%);
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -50%;
+    top: -50%;
 }
 
 @media (min-width: 991px) {
@@ -6247,15 +6316,15 @@ fffa77 .widget__search button i {
 
 #cta {
     position: fixed;
-    bottom: 10%;
+    bottom: calc(5% + 50px);
     right: 2%;
-    z-index: 9999
+    z-index: 99
 }
 
 #cta img {
     display: block;
     width: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     min-height: 1px;
 }
 
